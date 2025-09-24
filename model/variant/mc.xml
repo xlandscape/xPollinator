@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MCRun>
+  <Observers>
+    <Observer module="observer" class="ConsoleObserver">
+      <show_messages_get_values_ok>false</show_messages_get_values_ok>
+    </Observer>
+    <Observer module="observer" class="LogFileObserver">
+      <LogFile>$(_EXP_BASE_DIR_)\$(SimID)\log\mc_$(_MC_NAME_).log</LogFile>
+      <show_messages_get_values_ok>false</show_messages_get_values_ok>
+    </Observer>
+  </Observers>
+  <Store module="stores" class="X3dfStore">
+    <File_Path>$(_MCS_BASE_DIR_)\$(_MC_NAME_)\store</File_Path>
+    <Observer>
+      <ObserverReference/>
+    </Observer>
+    <Initialization/>
+    <Identifier>$(_MC_ID_)</Identifier>
+  </Store>
+  <Global>
+    <SimulationStart>2021-01-01</SimulationStart>
+    <SimulationEnd>2021-12-31</SimulationEnd>
+    <BeeHaveMapCenterPointX>127406.9408</BeeHaveMapCenterPointX>
+    <BeeHaveMapCenterPointY>5482559.8501</BeeHaveMapCenterPointY>
+  </Global>
+  <Composition>
+    <LandscapeScenario module="components" class="LandscapeScenario">
+      <BaseLandscapeGeometries scales="global">$(:LandscapeScenario)</BaseLandscapeGeometries>
+      <GeoPackageNamespace scales="global">urn:xPollinatorLandscapeScenarioPackageInfo</GeoPackageNamespace>
+    </LandscapeScenario>
+    <Vegetation module="components" class="LandCoverToVegetation">
+      <LandCover>
+        <FromOutput component="LandscapeScenario" output="FeatureTypeIds"/>
+      </LandCover>
+      <Mapping scales="global">
+        $(_MODEL_DIR_)/core/components/data/land cover to vegetation default mapping.xlsx
+      </Mapping>
+      <VegetationClasses scales="global">$(_MODEL_DIR_)/core/components/data/vegetation classes.json</VegetationClasses>
+    </Vegetation>
+    <BeeForage module="components" class="BeeForage">
+      <Vegetation>
+        <FromOutput component="Vegetation" output="Vegetation"/>
+      </Vegetation>
+      <Timeseries scales="global">
+        $(_MODEL_DIR_)/core/components/data/vegetation to bee forage phenology default mapping.xlsx
+      </Timeseries>
+      <NectarPerClass type="list[float]" scales="global" unit="L/(m²*d)">
+        0 0.0000225 0.000045 0.00009 0.0003
+      </NectarPerClass>
+      <PollenPerClass type="list[float]" scales="global" unit="g/(m²*d)">0 0.015 0.03 0.06 0.13</PollenPerClass>
+      <SimulationStart type="date" scales="global">$(SimulationStart)</SimulationStart>
+      <SimulationEnd type="date" scales="global">$(SimulationEnd)</SimulationEnd>
+    </BeeForage>
+    <BeeHave module="BeeHaveEcotox" class="BeeHaveEcotox">
+      <ProcessingPath scales="global">$(_MCS_BASE_DIR_)\$(_MC_NAME_)\processing\BeeHave</ProcessingPath>
+      <Nectar>
+        <FromOutput component="BeeForage" output="Nectar"/>
+      </Nectar>
+      <Pollen>
+        <FromOutput component="BeeForage" output="Pollen"/>
+      </Pollen>
+      <BeeHaveMapCenterPointX unit="m" scales="global" type="float">$(BeeHaveMapCenterPointX)</BeeHaveMapCenterPointX>
+      <BeeHaveMapCenterPointY unit="m" scales="global" type="float">$(BeeHaveMapCenterPointY)</BeeHaveMapCenterPointY>
+      <SegmentationGridRadii unit="m" scales="global" type="list[float]">
+        2 100 300 600 1100 1800 3000 5000
+      </SegmentationGridRadii>
+      <SegmentationGridSteps unit="1" scales="global" type="int">360</SegmentationGridSteps>
+      <SegmentationGridNumberSegmentsPerRadius unit="1" scales="global" type="list[int]">
+        1 3 5 6 8 9 10 12
+      </SegmentationGridNumberSegmentsPerRadius>
+      <NumberTimeSteps unit="1" scales="global" type="int">$(NumberBeeHaveTimesteps)</NumberTimeSteps>
+      <Vegetation>
+        <FromOutput component="Vegetation" output="Vegetation"/>
+      </Vegetation>
+    </BeeHave>
+  </Composition>
+</MCRun>

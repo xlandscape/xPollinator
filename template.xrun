@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Parameters
+  xmlns="urn:xPollinator"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:xPollinator model/variant/parameters.xsd"
+>
+  <!--
+  Parameter     :  SimID
+  Description   :  A unique identifier of a simulation run
+  Values        :  Any characters that are valid in file system identifiers
+  Remark        :  Running a simulation with the same name as an existing simulation run results in an error.
+  Best practice :  Change this parameter with every simulation run. When doing test runs, indicate the test character
+                   of clearly in the identifier. If conducting a run from the experiment table, register it there and
+                   use the naming scheme <experiment id>-<n> where n is the number of the run.
+  -->
+  <SimID>Test_Run_xPollinator</SimID>
+
+  <!--
+  Parameter     :  Project
+  Description   :  The scenario used by the simulation
+  Values        :  scenario/<xyz> where <xyz> is one of the sub-folders in the scenario folder.
+  Remark        :  Make sure that the scenario is present in the scenario sub-folder.
+  -->
+  <Project>scenario/Tarn-et-Garonne-small</Project>
+
+  <!--
+  Parameter     :  NumberBeeHaveTimesteps
+  Description   :  The number of timesteps (days) BeeHave should simulate
+  Values        :  An positive integer number.
+  Remark        :  BeeHave simulations start with the 1st of January.
+  -->
+  <NumberBeeHaveTimesteps>365</NumberBeeHaveTimesteps>
+</Parameters>

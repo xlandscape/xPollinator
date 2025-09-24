@@ -1,0 +1,6 @@
+[submodule "model/core"]
+	path = model/core
+	url = https://github.com/xlandscape/LandscapeModel-Core
+[submodule "model/variant/BeeHaveEcotox"]
+	path = model/variant/BeeHaveEcotox
+	url = https://github.com/xlandscape/BeeHaveEcotox-Component
