@@ -20,8 +20,6 @@
   <Global>
     <SimulationStart>2021-01-01</SimulationStart>
     <SimulationEnd>2021-12-31</SimulationEnd>
-    <BeeHaveMapCenterPointX>127406.9408</BeeHaveMapCenterPointX>
-    <BeeHaveMapCenterPointY>5482559.8501</BeeHaveMapCenterPointY>
   </Global>
   <Composition>
     <LandscapeScenario module="components" class="LandscapeScenario">
@@ -72,6 +70,18 @@
       <Vegetation>
         <FromOutput component="Vegetation" output="Vegetation"/>
       </Vegetation>
+      <AppliedVegetationId unit="1" scales="global" type="int">2102</AppliedVegetationId>
+      <MinNumberApplications unit="1" scales="global" type="int">0</MinNumberApplications>
+      <MaxNumberApplications unit="1" scales="global" type="int">0</MaxNumberApplications>
+      <FirstDayOfYearApplications unit="1" scales="global" type="int">100</FirstDayOfYearApplications>
+      <LastDayOfYearApplications unit="1" scales="global" type="int">250</LastDayOfYearApplications>
+      <ConcNectarMean unit="µg/kg" scales="global" type="float">1320</ConcNectarMean>
+      <ConcNectarStd unit="µg/kg" scales="global" type="float">132</ConcNectarStd>
+      <ConcPollenMean unit="µg/kg" scales="global" type="float">36200</ConcPollenMean>
+      <ConcPollenStd unit="µg/kg" scales="global" type="float">3620</ConcPollenStd>
+      <ContactToxicityMean unit="µg/bee" scales="global" type="float">0.4</ContactToxicityMean>
+      <ContactToxicityStd unit="µg/bee" scales="global" type="float">0.04</ContactToxicityStd>
+      <ExposurePeriod unit="d" scales="global" type="int">10000</ExposurePeriod>
     </BeeHave>
   </Composition>
 </MCRun>

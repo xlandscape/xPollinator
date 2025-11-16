@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="urn:xPollinatorLandscapeScenarioPackageInfo"
-    xmlns="urn:xPollinatorLandscapeScenarioPackageInfo"
-    elementFormDefault="qualified"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="urn:xPollinatorLandscapeScenarioPackageInfo"
+  xmlns="urn:xPollinatorLandscapeScenarioPackageInfo"
+  elementFormDefault="qualified"
 >
   <xsd:element name="landscape_package">
     <xsd:complexType>
@@ -22,7 +22,7 @@
               <xsd:element name="habitat_types">
                 <xsd:simpleType>
                   <xsd:restriction base="xsd:string">
-                    <xsd:pattern value="[0-9]+(, [0-9]+)*"/>
+                    <xsd:pattern value="[ \r\n]*[0-9]+(,[ \r\n]*[0-9]+)*[ \r\n]*"/>
                   </xsd:restriction>
                 </xsd:simpleType>
               </xsd:element>
