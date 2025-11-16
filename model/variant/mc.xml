@@ -82,6 +82,7 @@
       <ContactToxicityMean unit="µg/bee" scales="global" type="float">0.4</ContactToxicityMean>
       <ContactToxicityStd unit="µg/bee" scales="global" type="float">0.04</ContactToxicityStd>
       <ExposurePeriod unit="d" scales="global" type="int">10000</ExposurePeriod>
+      <RandomSeed unit="1" scales="global" type="int">0</RandomSeed>
     </BeeHave>
   </Composition>
 </MCRun>
