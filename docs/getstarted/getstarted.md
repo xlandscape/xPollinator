@@ -1,22 +1,50 @@
-# Intro
-
-The *Templates* section provides examples for xCP [**Parameterisations**](../reference/glossary.md#parameterisation). *Parameterisation* refers to the actual xCP parameterisation, ie. building PPP use scenarios.  The templates are for learning purposes and can be used as building block for your own parameterisation.
-
-Note: the parameterisation makes use of XML as a necessary and sufficient representation of the natural complexity of the characteristics of real-world PPP applications in cultivated landscapes. We are fully aware that XML is not the ideal **user interface**. The development of a **graphical user interface (GUI)** is planned.  
-
-The following templates are included in the current version of xCropProtection and are located in the *CropProtection/PPMCalendars* folder:
-
-- Apple-spray-guide
-    - Apple-spray-guide.xml: A parameterization of a recommended spray sequence for apples
-- Demo-calendars
-    - Active-substance-demo.xml: Demonstrates the application of one active substance
-    - Active-substance-demo-2.xml: Demonstrates how to set the input scale of an application
-    - Active-substance-demo-3.xml: Demonstrates a tank mix with two products (set the output scale to active substance in the user parameters)
-
-
 ## Installation
 
-### Option 1: xPollinator Demo Model
+### Option 1: Clone from GitHub
+
+If you just want to inspect or try xPollinator, the easiest way is to get the code directly from GitHub. Below are short, practical steps for a scientific modeller who knows basic IT but is not a Git expert. Choose either the GUI approach (Download ZIP or GitHub Desktop) or the PowerShell/command-line route.
+
+- Prerequisites:
+  - Install Git for Windows (https://git-scm.com/download/win) if you plan to use PowerShell/command-line.
+  - Optionally create a free GitHub account if you want to use GitHub Desktop or contribute changes.
+
+1) Quick — download a ZIP (no git required)
+    - Open the repository page in your browser: https://github.com/xlandscape/xPollinator
+    - Click the green **Code** button and choose **Download ZIP**.
+    - Unzip the downloaded file to a folder of your choice, then open it with your editor (e.g., Visual Studio Code).
+
+2) GUI — use GitHub Desktop (recommended if you prefer a graphical client)
+    - Install GitHub Desktop (https://desktop.github.com/) and sign in with your GitHub account.
+    - In the app choose File → Clone repository → URL and paste: https://github.com/xlandscape/xPollinator.git
+    - Choose a local folder and click **Clone**.
+
+3) Windows Command Prompt / Command-line (quick & reproducible)
+    - Open the Windows Command Prompt (cmd.exe) and run these commands:
+
+```bat
+REM clone the main repo (HTTPS)
+git clone https://github.com/xlandscape/xPollinator.git
+
+REM go into the project folder
+cd xPollinator
+
+REM (optional) check out the develop branch which typically contains the latest development work
+git fetch --all
+git checkout develop
+
+REM open the project folder in Explorer (Windows)
+start .
+
+REM (optional) open the project in Visual Studio Code (if installed and in PATH)
+code .
+```
+
+Notes on authentication and HTTPS vs SSH:
+  - Public repositories like xPollinator can be cloned via HTTPS without a GitHub account.
+  - If you prefer SSH and have an SSH key set up, you can clone with the SSH URL instead (git@github.com:xlandscape/xPollinator.git).
+
+After cloning: the repository contains documentation, the component source (if applicable) and links to example scenarios. To try the demo scenario referenced in this documentation, also clone the example landscape repository `xPollinatorDemo` (https://github.com/xlandscape/xPollinatorDemo) — that repo contains ready-to-run templates and scenarios used in the docs.
+
 As every component, xBF needs to be operated in a landscape modelling environment. An example landscape model using xBF was built in the [xLandscape](xLandscape/xLandscape-intro.md) framework, called **xPollinatorDemo**.  
 A user who just want to explore xBF or only needs the functionality of xBF should clone the repository [xPollinatorDemo](https://github.com/xlandscape/xPollinatorDemo/tree/main). Contact Sascha Bub ([sascha.bub@rptu.de](mailto:sascha.bub@rptu.de)) or Thorsten Schad ([thorsten.schad@bayer.com](mailto:thorsten.schad@bayer.com)) for access to the repository. Cloning steps vary based on the application being used, eg. [Sourcetree](https://support.atlassian.com/bitbucket-cloud/docs/clone-a-git-repository/) or [Visual Studio Code](https://learn.microsoft.com/en-us/azure/developer/javascript/how-to/with-visual-studio-code/clone-github-repository?tabs=activity-bar).  
 
@@ -65,6 +93,23 @@ As any other component, xBF is built to be used (together with other components)
     </FieldGeometries>
 </xPollinator>
 ```
+
+
+# Running xPollinator
+
+The *Templates* section provides examples for xCP [**Parameterisations**](../reference/glossary.md#parameterisation). *Parameterisation* refers to the actual xCP parameterisation, ie. building PPP use scenarios.  The templates are for learning purposes and can be used as building block for your own parameterisation.
+
+Note: the parameterisation makes use of XML as a necessary and sufficient representation of the natural complexity of the characteristics of real-world PPP applications in cultivated landscapes. We are fully aware that XML is not the ideal **user interface**. The development of a **graphical user interface (GUI)** is planned.  
+
+The following templates are included in the current version of xCropProtection and are located in the *CropProtection/PPMCalendars* folder:
+
+- Apple-spray-guide
+    - Apple-spray-guide.xml: A parameterization of a recommended spray sequence for apples
+- Demo-calendars
+    - Active-substance-demo.xml: Demonstrates the application of one active substance
+    - Active-substance-demo-2.xml: Demonstrates how to set the input scale of an application
+    - Active-substance-demo-3.xml: Demonstrates a tank mix with two products (set the output scale to active substance in the user parameters)
+
 
 ## Getting started
 File structure of [xPollinatorDemo](https://github.com/xlandscape/xPollinatorDemo/tree/main) after cloning:

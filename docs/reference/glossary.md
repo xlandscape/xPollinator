@@ -3,6 +3,10 @@
 Basically, all xCP entities are defined close to the real-world objects they represent (overview graphic on xCP Entities in [Indication](#indication)).  
 <br>
 
+## Components
+
+In xPollinator and xLandscape, a *component* is a modular, self-contained unit that encapsulates a single area of functionality (for example: land-use/land-cover handling, vegetation phenology, bee-forage modelling or exposure modules). Components can be composed or replaced to build and customise landscape models. They typically expose configuration and parameterisation settings to control behaviour.
+
 ## Active Substance
 
 An active substance (a.s.) in a plant protection product is any chemical, plant extract, pheromone, or micro-organism (including viruses) that acts against pests or affects plants, parts of plants, or plant products (https://food.ec.europa.eu/plants/pesticides_en). Essentially, it's the component that provides the intended protective or pesticidal effect.  

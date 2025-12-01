@@ -50,7 +50,7 @@ nav:
   - Get Started:
     - Intro: 'getstarted/getstarted.md'
   - Scenarios:
-    - Scenario Concepts: 'scenario-concepts.md'
+    - Scenario Concepts: 'scenarios/scenario-concepts.md'
     - TarnEtGaronne: 'scenarios/TarnEtGaronne.md'
     - Vaucluse: 'scenarios/Vaucluse.md'
     - MaineEtLoire: 'scenarios/MaineEtLoire.md'

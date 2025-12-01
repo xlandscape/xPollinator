@@ -31,32 +31,43 @@ The entire process of modelling beeforage is of [modular design](#modular-design
 
 ### Framework and Modularity
 
-xP is a ready-to-use landscape model, eg, to generate scenarios for the [BEEHAVE model](https://beehave-model.net/) ([Scenarios](#scenarios)), to simulation spatiotemporally explicit exposure pattern of pesticides via different exposure routes and environmental fate, as well as to model effects to pollinators.  
-Its individual functionalities are represented in modules (called components) which are integrated into the [xLandscape](xLandscape/xLandscape-intro.md#xlandscape) framework. Both, the framework and the modularity make xP very flexible to adapt its current capabilities for a range of purposes of modelling pollinator forage ([Background](#background)), exposure and effects, for a range of foraging species and basically for any geographic region and scale. Eg, in case a bee forage modeller has data and models to simulate the occurrence of honeydew producers, this can be included in the xP landscape model as a new component.  
+**xPollinator is a ready-to-use landscape model** for spatiotemporally explicit modelling of pollinator risk in real-world landscapes. This requires to integrate a range of domains, information, processes and models.  
+In its initial version, xP can generate [scenarios](#scenarios) for the [BEEHAVE model](https://beehave-model.net/), simulate spatiotemporally explicit exposure pattern of pesticides via different exposure routes and environmental fate, and can model effects of pesticide exposure to pollinators.  
+Its individual **functionalities are represented in modules** (called [components](reference/glossary.md#components)) which are **integrated into the [xLandscape](xLandscape/xLandscape-intro.md#xlandscape) framework** (figure below). Both, the framework and the modularity make xP **flexible to adapt its present capabilities** for a range of purposes of modelling pollinator forage ([Background](#background)), pollinator exposure and effects, different species and for basically any geographic region and extent. Eg, in case a bee forage modeller has data and models to simulate the occurrence of honeydew producers, this can be integrated in the xP landscape model as a new component.  
 
-xxx Spatiotemporally explicit modelling the  occurrence of bee forage in landscapes requires a **range of disciplines, information types and sub-models**. Nectar and pollen are produced by **flowering vegetation**, so vegetation type, plant species, their phenology and their specific nectar and pollen production (quantity, quality) is key data and information. Vegetation phenology depends on **environmental conditions**. Besides vegetation, bee forage does also occur as **honeydew**, which is produced by different insects (eg, Aphids probably the most well-known honeydew producers and often excrete large quantities, but also scale insects (Coccoidea), leafhoppers (Cicadellidae and others), Adelgids (Adelgidae), plant bugs (Heteroptera), whiteflies (Aleyrodidae), or mealybugs (Pseudococcidae)).  
-Accordingly, for modelling pollinator forage at landscape scales, **fundamental building blocks (elements, modules)** were identified and implemented as separate components in xP. An illustration is shown in the figure below.  
+<img src="img/xPollinator LandscapeModel scheme v01.png" alt="xPollinator model" width="1000"/>  
+
+**xPollinator landscape model**. xP is a modular composition of components using the [xLandscape](xLandscape/xLandscape-intro.md#xlandscape) framework. (Components marked with dashed lines were under discussion in the regulatory scientific community at the time of writing.)
+
+### Bee Forage
+
+Nectar and pollen are predominately produced by **flowering vegetation**. Thus, vegetation type, plant species, their phenology and their specific nectar and pollen production (quantity, quality) is essential data and information. Bee forage is also provided as honeydew, which is produced by different insects (eg, Aphids probably the most well-known honeydew producers and often excrete large quantities, but also scale insects (Coccoidea), leafhoppers (Cicadellidae and others), Adelgids (Adelgidae), plant bugs (Heteroptera), whiteflies (Aleyrodidae), or mealybugs (Pseudococcidae)).  
+In line with the fundamental design of xLandscape, modelling pollinator forage is separated in  **fundamental building blocks** (modules), implemented as components and integrated into xP. Accordingly, modelling of bee forage in xP itsself is a modular approach, and individual moduls and be replaced (enhanced) giving improved knowledge. An illustration is shown in the figure below.  
 
 <img src="img/BeeForage modelling process with Beehave scenario.png" alt="xPollinator modular design" width="1000"/>  
 
-Distinct steps in bee forage modelling which define xP components (building blocks/elements/modules).
+**Bee forage modelling sequence**. The explicit steps define xP components (initial focus on vegetation as forage providing landscape element).
 
-Key modules are:
+In the initital implementation of xP, key components for modelling bee forage are:
 
-- **Land use/land cover** (LULC) information: an assembly of spatial data that represents essential LULC types that provide bee forage. The geodata layer is composed of any data that the modeller seems relevant and that can be acquired or generated at reasonable efforts, targeting the goals of the bee forage modelling work (study).
-- **Vegetation and its phenology** (incl. honeydew producers): the module to translate LULC types to vegetation types and their phenology.
-- **Bee forage modelling**: the module to generate beeforage(space, time, type).
-- Parser: technical preparation of raw outcome as needed by the scenario clients (eg, the [BEEHAVE model](https://beehave-model.net/)).
+- **Land use/land cover** (LULC) information: an assembly of spatial data that represents essential LULC types that provide bee forage. The geodata layer can be modulary composed of any data, information and knowledge that the modeller seems relevant and that can be acquired or generated at reasonable efforts (e.g., using satellite imagery), targeting the goals of the bee forage modelling study at hand.  
+- **Vegetation and its phenology**: a module to translate LULC types to vegetation types and their phenology. In its inital realisation, the assignments are realised in tabular format and are based on literature and expert knowledge. This early approach is regarded robust and sufficiently accurate for the initial applications of the xP landscape model. However, this simple realisation can be replaced and improved, e.g., by introducing AI on plant communities and phenology models.  
+- **BeeForage(x,t)**: the module to generate actual bee forage occurrence in space and time, i.e., (initially) the provision of nectar and pollen (space, time -> BeeForage(x,t)).
+- BeeHave Scenario Parser: a module for the ready-to-use preparation of bee forage scenario as input for a pollinator model (eg, the [BEEHAVE model](https://beehave-model.net/)).
 
-A layered view to bee forage modelling adds to the illustration of the successive steps to deliver the ultimate bee forage information.  
+A layered view might support the understanding of data and information layers used in bee forage modelling.  
 
 <img src="img/BeeFOrage-Vegetation-Data layering.png" alt="xPollinator modular design" width="700"/>  
 
-Distinct data and information layers to derive bee forage (in space and time). (* *Sources* represent the occurrence of eg, honeydew producers)
+**Data and information layers in bee forage modelling**. (* *Sources* represent forage occurrence other then provided by vegetation, eg, honeydew producers.)  
 
 This modularity enables to basically use any type of data, information and sub-models which are approriate to a specific bee (pollinator) forage modelling purpose. Example data inputs and parameterisations are introduced in the [Scenario](#scenarios) section.
 
-#### xPollinator Landscape Model
+### BeeHave
+
+xxx
+
+### xPollinator Landscape Model
 
 The modular landscape model to for spatiotemporally explicit simulation of bee (pollinator) forage, xPollinator (xP), was built using the **landscape modelling framework** [xLandscape](xLandscape/xLandscape-intro.md#xlandscape). The framework allows to compose individual modules, called *Components* to a landscape models, that operates spatiotemporally explicit.  
 The components represent and encapsulate distinct functionality. Any component can be replaced by more or less complex ones.  
@@ -103,13 +114,9 @@ In our representation of vegetation (and its phenology), instead of employing an
 
 The user defines PPP uses in a ***Crop Protection Calender***, including application technology, and mitigation measures for reducing exposure (risk). The approach of using a *Crop Protection Calender* is based on agricultural practice, where pest control measures for a crop are typically planned based on experiance, PPP availability and other factors. Crop protection plans are made eg, by official plant protection advisory services, farmers, or PPP producers. Besides reflecting ag practice, the approach of a CPC also addresses modelling practice in risk assessment which typically focus on a certain indication, conducted over long time periods. Beyond these established uses, alternative CPCs can be used to assess the environmental impact of alternative pest control options, or to design new pest control means against established ones, considered as baselines.  
 
-#### LULC
-
-Land use/cover data provides typically builds the spatial base information on 
-
-Vegetation mapping and modelling. [European Vegetation Archive (EVA)](https://euroveg.org/eva-database/)
-
 #### Environmental Data
+
+Agri4Cast
 
 ### Tiered Approach
 
@@ -132,7 +139,7 @@ On each time step (eg, day) and field in a simulation, xP checks if there are pr
 ## Application
 
 ## Acknowledgements
-The need and the development of the xP landscape model was initiated by Thorsten Schad (tschadwork@gmail.com). It's realisation was only possibly due to the contribution of colleagues listed below and the sponsoring by Bayer AG.  
+The need and the development of the xP landscape model was initiated by Thorsten Schad (thorsten.schad@landwerk-ev.de). It's realisation was only possibly due to the contribution of colleagues listed below and the sponsoring by Bayer AG.  
 
 <img src="img/Contributions.png" alt="Contributors and Roles" width="800"/> xxx
 
