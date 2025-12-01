@@ -63,90 +63,37 @@ A layered view might support the understanding of data and information layers us
 
 This modularity enables to basically use any type of data, information and sub-models which are approriate to a specific bee (pollinator) forage modelling purpose. Example data inputs and parameterisations are introduced in the [Scenario](#scenarios) section.
 
-### BeeHave
+### BEEHAVE Model
 
-xxx
+In its initial version (October 2025) xPollinator integrates BEEHAVEcotox as the component to simulate effects to honey bees.  
+BEEHAVEecotox is an extension of the [BeeHave](https://beehave-model.net/) model.  
+BEEHAVE is a purpose-built, open-source computer model that simulates the daily development of a honeybee colony together with explicit nectar and pollen foraging across heterogeneous landscapes. It integrates within-hive processes (brood care and colony population dynamics) with foraging behaviour and can represent multiple stressors — such as varroa, weather, forage shortages or pesticide impacts — to study their combined effects on colony health. BEEHAVE is implemented in NetLogo, comes with a user manual and detailed model description, and is available for download at the [BeeHave](https://beehave-model.net/) project site.  
+[BEEHAVEecotox](https://github.com/ibacon-GmbH-Modelling/BEEHAVEecotox) is an ecotoxicological extension of BEEHAVE that integrates a mechanistic effect module linking pesticide exposure to colony processes (mortality of foragers, brood, and in-hive bees) and landscape-scale inputs. Implemented in NetLogo, the package includes the NetLogo model code, a landscape extension, example input files (for food sources and pesticide applications), a user manual and technical notes. The BEEHAVEecotox implementation and its landscape extension are described in Preuss et al. (2022); the project sources and documentation are available from the BEEHAVEecotox GitHub repository under a GPL licence.
 
-### xPollinator Landscape Model
+### Scenarios
 
-The modular landscape model to for spatiotemporally explicit simulation of bee (pollinator) forage, xPollinator (xP), was built using the **landscape modelling framework** [xLandscape](xLandscape/xLandscape-intro.md#xlandscape). The framework allows to compose individual modules, called *Components* to a landscape models, that operates spatiotemporally explicit.  
-The components represent and encapsulate distinct functionality. Any component can be replaced by more or less complex ones.  
-Adding components adds functionality. For xP, a version exists that comprises the use of pesticides (PPPs) and the environmental exposure (figure below). Again, each exposure route and process is represented by a specific component (which can be replaced to manage model complexity).  
-
-<img src="img/xP.png" alt="xPollinator modular design" width="700"/>  
-
-Composition of the xPollinator landscape model (v0.9). Its components are introduced in subsections below.
-
-<img src="img/xP & exposure and effects.png" alt="xPollinator modular design" width="700"/>  
-
-Composition of the xPollinator landscape model (v0.9) including components to model PPP use and environmental exposure.
-
-#### BeeForage Component
-
-The BeeForage component models the occurrence of nectar and pollen in space and time. The outcome is stored in a multidimensional data store.  
-The current version (v0.9) uses spatial data on vegetation types (units) and their phenology as base input, together with information on nectar and pollen production by these vegetation types. The core functionality of the BeeForage component is to match (model) nectar and pollen production for each of these vegetation types. In the current version, this is done by a simple lookup tables (with a honey bee focus):  
-
-1. Assigning nectar and pollen production intensity classes (0-4) to vegetation type (by time).  
-1. Assigning nectar and pollen production quantities to intensity classes.  
-
-<img src="img/Vegetation-Phenology illustration.png" alt="xPollinator modular design" width="700"/>  
-
-Lookup table to assign nectar and pollen production intensity classes (0-4) to vegetation type (by time).
-
-<img src="img/Nectar-Pollen quantification.png" alt="xPollinator modular design" width="1000"/>  
-
-Lookup table to assign nectar and pollen production quantities to intensity classes.
-
-Both lookup tables are based on literature and expert judgement (xxx).  
-
-This initial realisation of the BeeForage-Component can be enhanced and replaced by more sophisticated bee forage modelling, eg, using data-driven/AI or mechanistic models, together with corresponding geoinformation on the underlying vegetation.  
-The BeeForage-Component can also be extended to model the occurrence of honeydew, again, if corresponding models, knowledge and data are available (and fit to each other).  
-
-#### Vegetation
-
-In our representation of vegetation (and its phenology), instead of employing an of-the-shelf land use/cover (LULC) dataset, we compose bee forage-providing land use/land cover elements from different sources. This composition is driven by the study purpose and related requirements (eg, level of detail, precision, certainty, scales), data availability, and given ressources. Eg, 
-
-- a LULC base layer (eg, topographic geodata) is used to identify general LULC types (eg, arable, forest, orchards, grasslands, gardens, ruderal) and more bee forage specific types if possible (eg, apple, decidious woods, arable crop types)  
-- Specific bee forage providing crop types are identified from satellite imagery (eg, oil seed rape)  
-- Likewise, grassland characterisation can be done using satellite imagery based approaches (eg, hayfield, natural, intense sillage)  
-- Further bee forage relevant vegetation can be constructed from LULC base layers and literature (eg, riparian, wood margins)  
-- High-resolution landscape elements can be added from mapping (eg, hedges, groups of bee forage relevant trees, etc.) 
-
-The user defines PPP uses in a ***Crop Protection Calender***, including application technology, and mitigation measures for reducing exposure (risk). The approach of using a *Crop Protection Calender* is based on agricultural practice, where pest control measures for a crop are typically planned based on experiance, PPP availability and other factors. Crop protection plans are made eg, by official plant protection advisory services, farmers, or PPP producers. Besides reflecting ag practice, the approach of a CPC also addresses modelling practice in risk assessment which typically focus on a certain indication, conducted over long time periods. Beyond these established uses, alternative CPCs can be used to assess the environmental impact of alternative pest control options, or to design new pest control means against established ones, considered as baselines.  
-
-#### Environmental Data
-
-Agri4Cast
-
-### Tiered Approach
-
-xxx Depending on the purpose of bee (pollinator) forage modelling,  
-
-1. off-the-shelf data: covering large geographic regions
-1. best-available data, including manual processing
-1. contemporary data generation: high-resolution drone mapping
-1. field study: best possible landscape mapping, bee forage quantification and modelling
-
-### xP Simulation xxx: move to 'get started'
-
-On each time step (eg, day) and field in a simulation, xP checks if there are products to apply. If so, exact application details are determined based on model parameterisation (eg, deterministic or by sampling from  from distributions given by the user) and executed.  
-
-
-## xPollinator Landscape Model
-
-## Scenarios
-
-## Application
+Scenarios represent the environmental, land use, agricultural management and ecological conditions. Their definition heavily depends on the problem at hand, i.e., the modelling purpose. The technical requirements for xP scenarios, their concepts and development, as well as example scenarios are summarised in the [scenarios](scenarios/scenario-concepts.md) section.  
 
 ## Acknowledgements
-The need and the development of the xP landscape model was initiated by Thorsten Schad (thorsten.schad@landwerk-ev.de). It's realisation was only possibly due to the contribution of colleagues listed below and the sponsoring by Bayer AG.  
+
+The development of the xP landscape model was initiated by Thorsten Schad ([thorsten.schad@landwerk-ev.de](mailto:thorsten.schad@landwerk-ev.de)) and the major development was done by Sascha Bub ([sascha.bub@rptu.de](mailto:sascha.bub@rptu.de)).  
+Its realisation was only possible due to the contribution of colleagues listed below and the sponsoring by Bayer AG.  
+
+| Role / Activity | Person |
+|---|---|
+| Idea and Initiative | Thorsten Schad ([thorsten.schad@landwerk-ev.de](mailto:thorsten.schad@landwerk-ev.de)) |
+| Major development | Sascha Bub ([sascha.bub@rptu.de](mailto:sascha.bub@rptu.de)) |
+| Goals&Requiements | Thorsten Schad, Sascha Bub |
+| Design | Thorsten Schad, Sascha Bub  |
+| Implementation | Sascha Bub, Thorsten Schad |
+| Testing | Thorsten Schad |
+| Documentation | Thorsten Schad |
+| Publication | Sascha Bub, Thorsten Schad, Julian Heinrich |
+| xxx |  |
 
 <img src="img/Contributions.png" alt="Contributors and Roles" width="800"/> xxx
 
 ## References
-EFSA Guidance  
-BioDT
 
-[EFSA Bee Guidance](https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2021.6607)  
-Pritsch
-Westrich Die Wildbienen Deutschlands
+[EFSA Bee Guidance](https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2021.6607).  
+Preuss, T.G., Agatz, A., Goussen, B., Roeben, V., Rumkee, J., Zakharova, L. & Thorbek, P. (2022). The BEEHAVEecotox model - Integrating a mechanistic effect module into the honeybee colony model, Environmental Toxicology and Chemist, 41: 2870- 2882.
