@@ -1,19 +1,32 @@
 # Intro
 
-role of scenarios in risk assessment  
-other uses of scenarios  scales  geographic extent  metamodels  scenario site selection  
-representativity  number of scenarios  
-site selection
+First of all, scenarios have a **technical meaning** as a structured integration of all nessessary environmental, land use/cover, agricultural, ecological data, information and assumptions to run a model (here, xPollinator). However, in environmental risk assessment, scenarios have a **regulatory meaning** as a testing system, that has to assure a certain protection level in case the test gets passed. In this role, scenarios have to address a certain **level of conservatism**, hence, need to be **representative** for a range of conditions of a typically large geographic area (e.g., a country).  
+Whereas detailed scenarios are applied to derive risk estimates, simple ones are used, e.g., for screening a level of conservatism for large areas.  
+Scenarios play a key role in the analysis and definition of effective **risk mitigation** measures. Scenarios can incorporate buffer zones, the use of drift-reducing technology, reduced application rates, or alternative practices to evaluate risk reduction. Beyond the focus on actual pesticide uses, scenarios serve **risk management** approaches targeting generic landscape characteristics which affect species populations, communities and biodiversity: e.g., the composition, managment and structure of cultivated landscapes, and their relationship to their surrounding regions.  
+Realistic landscape scenarios can play an important role in **policy alignment**: The definition of Specific Protection Goals (SPGs, e.g., [EFSA 2010](https://doi.org/10.2903/j.efsa.2010.1821), [EFSA 2025](https://doi.org/10.2903/j.efsa.2025.9501)) is based on the ecosystem services concepts. Modern regulatory developments highlight the important role of landscape scenarios and approaches as a way to contextualize SPGs, e.g., for terrestrial organisms. Future risk and risk assessment will develop beyond single-species laboratory tests and incorporate realistic agricultural landscapes, including spatial and temporal heterogeneity, e.g., to capture both direct and indirect effects of pesticides. Risk management decisions should be informed by how pesticides affect organisms in actual European agroecosystems, not abstract worst-cases or averages. Landscape scenarios can ensure that SPGs align with broader environmental protection mandates to EU biodiversity and sustainability goals. So, landscape scenarios serve as a **bridge between scientific modelling and regulatory decision-making**.
 
-# Steps
+# xP Scenario Definition
 
-## LULC
+After downloading a scenario folder 
+xPollinator\scenario 
+
+# xP Scenario Development
+
+use existing scenarios as templates
+
+# Outlook
+
+## Geographic Region
+
+## Bee Forage 
+
+### LULC
 
 Land use/cover data provides typically builds the spatial base information on 
 
 Vegetation mapping and modelling. [European Vegetation Archive (EVA)](https://euroveg.org/eva-database/)
 
-#### BeeForage Component
+### BeeForage
 
 The BeeForage component models the occurrence of nectar and pollen in space and time. The outcome is stored in a multidimensional data store.  
 The current version (v0.9) uses spatial data on vegetation types (units) and their phenology as base input, together with information on nectar and pollen production by these vegetation types. The core functionality of the BeeForage component is to match (model) nectar and pollen production for each of these vegetation types. In the current version, this is done by a simple lookup tables (with a honey bee focus):  
@@ -21,11 +34,11 @@ The current version (v0.9) uses spatial data on vegetation types (units) and the
 1. Assigning nectar and pollen production intensity classes (0-4) to vegetation type (by time).  
 1. Assigning nectar and pollen production quantities to intensity classes.  
 
-<img src="img/Vegetation-Phenology illustration.png" alt="xPollinator modular design" width="700"/>  
+<img src="../img/Vegetation-Phenology illustration.png" alt="xPollinator modular design" width="700"/>  
 
 Lookup table to assign nectar and pollen production intensity classes (0-4) to vegetation type (by time).
 
-<img src="img/Nectar-Pollen quantification.png" alt="xPollinator modular design" width="1000"/>  
+<img src="../img/Nectar-Pollen quantification.png" alt="xPollinator modular design" width="1000"/>  
 
 Lookup table to assign nectar and pollen production quantities to intensity classes.
 
@@ -64,3 +77,4 @@ xxx Depending on the purpose of bee (pollinator) forage modelling,
 xxx  
 Pritsch  
 Westrich "Die Wildbienen Deutschlands"
+

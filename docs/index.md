@@ -82,16 +82,14 @@ Its realisation was only possible due to the contribution of colleagues listed b
 | Role / Activity | Person |
 |---|---|
 | Idea and Initiative | Thorsten Schad ([thorsten.schad@landwerk-ev.de](mailto:thorsten.schad@landwerk-ev.de)) |
-| Major development | Sascha Bub ([sascha.bub@rptu.de](mailto:sascha.bub@rptu.de)) |
-| Goals&Requiements | Thorsten Schad, Sascha Bub |
+| Goals&Requiements | Thorsten Schad, Vanessa Roeben (Bayer AG), Thomas Preuss (Bayer AG), Sascha Bub ([sascha.bub@rptu.de](mailto:sascha.bub@rptu.de)) |
 | Design | Thorsten Schad, Sascha Bub  |
 | Implementation | Sascha Bub, Thorsten Schad |
 | Testing | Thorsten Schad |
 | Documentation | Thorsten Schad |
 | Publication | Sascha Bub, Thorsten Schad, Julian Heinrich |
-| xxx |  |
-
-<img src="img/Contributions.png" alt="Contributors and Roles" width="800"/> xxx
+| Analysis Modules | Thorsten Schad, Julian Heinrich |
+| Scenarios | Chris Holmes (Applied Analysis Solutions), Thorsten Schad, Sascha Bub|
 
 ## References
 

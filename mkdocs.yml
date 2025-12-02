@@ -48,13 +48,10 @@ markdown_extensions:
 nav:
   - Home: 'index.md'
   - Get Started:
-    - Intro: 'getstarted/getstarted.md'
+    - Introduction: 'getstarted/getstarted.md'
   - Scenarios:
-    - Scenario Concepts: 'scenarios/scenario-concepts.md'
-    - TarnEtGaronne: 'scenarios/TarnEtGaronne.md'
-    - Vaucluse: 'scenarios/Vaucluse.md'
-    - MaineEtLoire: 'scenarios/MaineEtLoire.md'
-    - Create a scenario: 'create-scenario.md'
+    - Introduction: 'scenarios/scenario-intro.md'
+    - Example Scenarios: 'scenarios/Example-scenarios-France.md'
   - Tutorials:
     - Introduction: 'tutorials/training-intro.md'
   - Technical Reference:

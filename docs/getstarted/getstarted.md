@@ -7,17 +7,17 @@
 If you just want to inspect or try xPollinator, the easiest way is to get the code directly from GitHub. Below are short, practical steps for a scientific modeller who knows basic IT but is not a Git expert. Choose either the GUI approach (Download ZIP or GitHub Desktop) or the PowerShell/command-line route.
 
 - Prerequisites:
-  - Install Git for Windows (https://git-scm.com/download/win) if you plan to use PowerShell/command-line.
+  - Install Git for Windows (<https://git-scm.com/download/win>) if you plan to use PowerShell/command-line.
   - Optionally create a free GitHub account if you want to use GitHub Desktop or contribute changes.
 
 1) Quick — download a ZIP (no git required)
-    - Open the repository page in your browser: https://github.com/xlandscape/xPollinator
+    - Open the repository page in your browser: <https://github.com/xlandscape/xPollinator>
     - Click the green **Code** button and choose **Download ZIP**.
     - Unzip the downloaded file to a folder of your choice, then open it with your editor (e.g., Visual Studio Code).
 
 2) GUI — use GitHub Desktop (recommended if you prefer a graphical client)
-    - Install GitHub Desktop (https://desktop.github.com/) and sign in with your GitHub account.
-    - In the app choose File → Clone repository → URL and paste: https://github.com/xlandscape/xPollinator.git
+    - Install GitHub Desktop (<https://desktop.github.com/>) and sign in with your GitHub account.
+    - In the app choose File → Clone repository → URL and paste: <https://github.com/xlandscape/xPollinator.git>
     - Choose a local folder and click **Clone**.
 
 3) Windows Command Prompt / Command-line (quick & reproducible)
@@ -43,10 +43,10 @@ code .
 
 Notes on authentication and HTTPS vs SSH:
 
-  - Public repositories like xPollinator can be cloned via HTTPS without a GitHub account.
-  - If you prefer SSH and have an SSH key set up, you can clone with the SSH URL instead (git@github.com:xlandscape/xPollinator.git).
+- Public repositories like xPollinator can be cloned via HTTPS without a GitHub account.
+- If you prefer SSH and have an SSH key set up, you can clone with the SSH URL instead (`git@github.com:xlandscape/xPollinator.git`).
 
-After cloning: the repository contains documentation, the component source (if applicable) and links to example scenarios. To try the demo scenario referenced in this documentation, also clone the example landscape repository `xPollinatorDemo` (https://github.com/xlandscape/xPollinatorDemo) — that repo contains ready-to-run templates and scenarios used in the docs.
+After cloning: the repository contains documentation, the component source (if applicable) and links to example scenarios. To try the demo scenario referenced in this documentation, also clone the example landscape repository `xPollinatorDemo` (<https://github.com/xlandscape/xPollinatorDemo>) — that repo contains ready-to-run templates and scenarios used in the docs.
 
 Cloning steps vary based on the application being used, eg. [Sourcetree](https://support.atlassian.com/bitbucket-cloud/docs/clone-a-git-repository/) or [Visual Studio Code](https://learn.microsoft.com/en-us/azure/developer/javascript/how-to/with-visual-studio-code/clone-github-repository?tabs=activity-bar). Contact Sascha Bub ([sascha.bub@rptu.de](mailto:sascha.bub@rptu.de)) or Thorsten Schad ([thorsten.schad@landwerk-ev.de](mailto:thorsten.schad@landwerk-ev.de)) in case of problems.  
 
@@ -126,31 +126,3 @@ dfs.append(pandas.DataFrame(geom_project_area_ha, columns=["AppliedArea(ha)"]))
 dfs.append(pandas.DataFrame(application_rates_data * geom_project_area_ha, columns=["AppliedMass(g)"]))
 dfs.append(pandas.DataFrame(drift_reduction_data, columns=["TechnologyDriftReductions"]))
 ```
-
-#### *xBF_plot_application_rate.ipynb*
-*xBF_plot_application_rate.ipynb* (version 2.0) **plots application rates** (as a scatter plot) of all product applications in a user-defined year. User parameters:
-
-`xcrop_arrdat_path` : *C:\path\to\arr.dat*
-
-`year_to_chart` : only display data for this year
-
-#### *xBF_total_loading.ipynb*
-*xBF_total_loading.ipynb* (version 2.0) **charts the total loading over time** for a specific field and for all fields. Total loading is calculated by plotting a cumulative sum of mass applied to a field (or all fields). User parameters:
-
-`xcrop_arrdat_path` : *C:\path\to\arr.dat*
-
-`feature_to_chart` : ID of the field to chart. If a field ID is invalid, the notebook will plot the total loading of the first field it reads.
-
-#### *xBF_map_vis.ipynb*
-*xBF_map_vis.ipynb* (version 2.0) **visualizes applications on a map** with the ability to advance through time. Please note that while this code was designed to be as general as possible, users should be aware that the map visualization will need code modification and additional input to work with other scenarios. Any new product names and types must be added to ProductTypes.csv. Also, due to limitations of the mapping package it may not be possible to generate visualizations with large datasets or over long periods of time. User parameters:
-
-`data_store_path` : *C:\path\to\arr.dat*
-
-`input_shp_file_path` : *C:\path\to\LULC.shp*
-
-`output_map_html_path` : *C:path\to\output\html_map.html*
-
-`output_map_html_2_path` : *C:\path\to\output\html_map_2.html*
-
-`product_table` : *C:...\xPollinator\analysis\ProductTypes.csv*. This table defines product names and their type.
-
