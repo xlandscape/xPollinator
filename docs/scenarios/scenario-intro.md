@@ -5,28 +5,39 @@ Whereas detailed scenarios are applied to derive risk estimates, simple ones are
 Scenarios play a key role in the analysis and definition of effective **risk mitigation** measures. Scenarios can incorporate buffer zones, the use of drift-reducing technology, reduced application rates, or alternative practices to evaluate risk reduction. Beyond the focus on actual pesticide uses, scenarios serve **risk management** approaches targeting generic landscape characteristics which affect species populations, communities and biodiversity: e.g., the composition, managment and structure of cultivated landscapes, and their relationship to their surrounding regions.  
 Realistic landscape scenarios can play an important role in **policy alignment**: The definition of Specific Protection Goals (SPGs, e.g., [EFSA 2010](https://doi.org/10.2903/j.efsa.2010.1821), [EFSA 2025](https://doi.org/10.2903/j.efsa.2025.9501)) is based on the ecosystem services concepts. Modern regulatory developments highlight the important role of landscape scenarios and approaches as a way to contextualize SPGs, e.g., for terrestrial organisms. Future risk and risk assessment will develop beyond single-species laboratory tests and incorporate realistic agricultural landscapes, including spatial and temporal heterogeneity, e.g., to capture both direct and indirect effects of pesticides. Risk management decisions should be informed by how pesticides affect organisms in actual European agroecosystems, not abstract worst-cases or averages. Landscape scenarios can ensure that SPGs align with broader environmental protection mandates to EU biodiversity and sustainability goals. So, landscape scenarios serve as a **bridge between scientific modelling and regulatory decision-making**.
 
-# xP Scenario Definition
+## xP Scenarios
 
-After downloading a scenario folder 
-xPollinator\scenario 
+### General
 
-# xP Scenario Development
+According to their technical meaning, scenario definition and requirements depend on the given composition of the xP landscape model (i.e., integrated components and their version). Thus, scenario development has to be adaptive and in line with xP model development.  
+[Example scenarios](/scenarios/Example-scenarios-France.md) shipped with xP fit to the given model version and reside in the scenario folder after model download (xPollinator\scenario).  
+[Example scenarios](/scenarios/Example-scenarios-France.md) also provide a good starting point for the development of user-defined (new) scenarios.  
 
-use existing scenarios as templates
+Outlook:  
+For scenario creation web-based services have been experimentally tested. Such services provide a (simple) GUI via web browser to enable the user to select a geographic location (e.g., via mouse click or by providing coordinates), to set parameters and to get a ready-to-use scenario back. This significally reduces effort and cost for the user and supports consistancy and harmonisation.  
+Furthermore, such services can support the study site identification, i.e., the selection of representative scenario locations (and numbers).  
 
-# Outlook
+### Scenario Development Aspects
 
-## Geographic Region
+#### Tiered Approach
 
-## Bee Forage 
+Typically, the ideal data of local nectar and pollen provisioning by plant species, together with the necessary data on environmental conditions are not available. Thus, **bee forage occurrence need to be modeled**. Scale, precision and accurracy of this modelling approach should be adapted to the problem at hand. Presumably, this procedure comes with expert judgement, so, transparancy in the data acquisition, preparation and processing is key to acceptability.  
+To support clarity and transparancy, we propose to consider a tiered approach (4 levels) as part of this Depending on the purpose of the bee (pollinator) forage modelling, :
 
-### LULC
+| Level | Data Acquisition | Description |
+| --- | --- | --- |
+| 1 | Off-the-shelf data | Broad-coverage datasets (satellite, national/regional products) suitable for large-scale or screening analyses. |
+| 2 | Best-available data | Curated and locally-validated datasets with additional manual processing or expert curation for improved accuracy. |
+| 3 | Contemporary data generation | High-resolution data collected specifically for the study (e.g., drone mapping, targeted remote sensing). |
+| 4 | Field study | Detailed, on-the-ground mapping and measurements providing the highest-resolution information about forage, phenology and local environmental conditions. |
+
+#### LULC
 
 Land use/cover data provides typically builds the spatial base information on 
 
 Vegetation mapping and modelling. [European Vegetation Archive (EVA)](https://euroveg.org/eva-database/)
 
-### BeeForage
+#### BeeForage
 
 The BeeForage component models the occurrence of nectar and pollen in space and time. The outcome is stored in a multidimensional data store.  
 The current version (v0.9) uses spatial data on vegetation types (units) and their phenology as base input, together with information on nectar and pollen production by these vegetation types. The core functionality of the BeeForage component is to match (model) nectar and pollen production for each of these vegetation types. In the current version, this is done by a simple lookup tables (with a honey bee focus):  
@@ -62,15 +73,6 @@ The user defines PPP uses in a ***Crop Protection Calender***, including applica
 #### Environmental Data
 
 Agri4Cast
-
-### Tiered Approach
-
-xxx Depending on the purpose of bee (pollinator) forage modelling,  
-
-1. off-the-shelf data: covering large geographic regions
-1. best-available data, including manual processing
-1. contemporary data generation: high-resolution drone mapping
-1. field study: best possible landscape mapping, bee forage quantification and modelling
 
 ## References
 
