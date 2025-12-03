@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<landscape_package
+  xmlns="urn:xPollinatorLandscapeScenarioPackageInfo"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:xPollinatorLandscapeScenarioPackageInfo ../../../model/variant/package.xsd"
+>
+  <meta>
+    <version>0.1</version>
+    <target_type>2104</target_type>
+    <habitat_types>
+      3102, 3103, 3104, 3105, 3106, 3111, 3201, 3203, 3204, 3206, 3207, 3301, 3302, 3311, 3401, 3403, 3404, 3405, 3406,
+      3502, 3503, 3504, 3505, 3506, 4101, 4105, 4107, 4108, 4109, 4201, 5101, 5102, 5201, 5202, 5205, 5301, 5401
+    </habitat_types>
+  </meta>
+  <base>
+    <base_landscape_geometries>lulc.shp</base_landscape_geometries>
+    <feature_id_attribute>id</feature_id_attribute>
+    <feature_type_attribute>L3</feature_type_attribute>
+    <additional_attributes/>
+  </base>
+  <supplementary/>
+  <supplementary_shapefiles/>
+</landscape_package>

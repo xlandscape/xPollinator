@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project
+  xmlns="urn:xLandscapeModelScenarioInfo"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:xLandscapeModelScenarioInfo ../../model/core/base/scenario.xsd"
+>
+  <Name>TarnEtGaronneSmall</Name>
+  <Version>0.1</Version>
+  <SupportedRuntimeVersions>
+    <Version variant="xBeePollinator" number="0.1"/>
+  </SupportedRuntimeVersions>
+  <Description>
+    A small subset of the Tarn-et-Garonne scenario.
+  </Description>
+  <TemporalExtent>
+    <FromDate>1900-01-01</FromDate>
+    <ToDate>2099-12-31</ToDate>
+  </TemporalExtent>
+  <Changelog>
+    <Version number="0.1" date="2025-09-23">
+      <Addition author="sascha">Initial version of the scenario.</Addition>
+    </Version>
+  </Changelog>
+  <Content>
+    <Item name="LandscapeScenario" target="geo/package.xinfo" version="0.1"/>
+  </Content>
+  <Contacts>
+    <Contact>Thorsten Schad - thorsten.schad@bayer.com</Contact>
+  </Contacts>
+  <Acknowledgements>
+    <Acknowledgement>No acknowledgements, yet.</Acknowledgement>
+  </Acknowledgements>
+</Project>

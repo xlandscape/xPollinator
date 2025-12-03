@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Parameters>
+  <SimID>TestRun</SimID>
+  <Project>scenario/Tarn-et-Garonne-small</Project>
+  <NumberBeeHaveTimesteps>365</NumberBeeHaveTimesteps>
+  <BeeHaveMapCenterPointX>127406.9408</BeeHaveMapCenterPointX>
+  <BeeHaveMapCenterPointY>5482559.8501</BeeHaveMapCenterPointY>
+</Parameters>
