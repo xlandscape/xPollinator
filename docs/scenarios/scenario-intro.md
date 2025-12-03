@@ -22,6 +22,7 @@ Furthermore, such services can support the study site identification, i.e., the 
 #### Tiered Approach
 
 Typically, the ideal data of local nectar and pollen provisioning by plant species, together with the necessary data on environmental conditions are not available. Thus, **bee forage occurrence need to be modeled**. Scale, precision and accurracy of this modelling approach should be adapted to the problem at hand. Presumably, this procedure comes with expert judgement, so, transparancy in the data acquisition, preparation and processing is key to acceptability.  
+xxx  
 To support clarity and transparancy, we propose to consider a tiered approach (4 levels) as part of this Depending on the purpose of the bee (pollinator) forage modelling, :
 
 | Level | Data Acquisition | Description |
