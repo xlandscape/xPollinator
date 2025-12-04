@@ -1,0 +1,1737 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../getstarted/getstarted.html">
+      
+      
+        <link rel="next" href="Example-scenarios-France.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../img/land-plots-marker.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Introduction - xPollinator Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#intro-writing-in-progress" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="xPollinator Documentation" class="md-header__button md-logo" aria-label="xPollinator Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 2h16c1.1 0 2 .9 2 2v6H10v10h4.55q.27.45.54.84c.29.43.57.82.83 1.16H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2m4 2H4v10h4zM4 16v4h4v-4zm6-8h10V4H10zm8.5 14s-.58-.65-1.27-1.59c-.09-.13-.19-.27-.29-.41C16 18.66 15 16.89 15 15.5c0-1.9 1.6-3.5 3.5-3.5.53 0 1.04.13 1.5.35 1.17.57 2 1.78 2 3.15 0 1.54-1.23 3.54-2.23 4.91-.69.94-1.27 1.59-1.27 1.59m-1.2-6.4c0 .6.5 1.2 1.2 1.2s1.3-.6 1.2-1.2c0-.6-.6-1.2-1.2-1.2s-1.2.5-1.2 1.2"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            xPollinator Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/xlandscape/xPollinator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xPollinator on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getstarted/getstarted.html" class="md-tabs__link">
+          
+  
+  
+  Get Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="scenario-intro.html" class="md-tabs__link">
+          
+  
+  
+  Scenarios
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reference/troubleshooting.html" class="md-tabs__link">
+          
+  
+  
+  Technical Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reference/glossary.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../xLandscape/xLandscape-intro.html" class="md-tabs__link">
+          
+  
+  
+  xLandscape
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="xPollinator Documentation" class="md-nav__button md-logo" aria-label="xPollinator Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 2h16c1.1 0 2 .9 2 2v6H10v10h4.55q.27.45.54.84c.29.43.57.82.83 1.16H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2m4 2H4v10h4zM4 16v4h4v-4zm6-8h10V4H10zm8.5 14s-.58-.65-1.27-1.59c-.09-.13-.19-.27-.29-.41C16 18.66 15 16.89 15 15.5c0-1.9 1.6-3.5 3.5-3.5.53 0 1.04.13 1.5.35 1.17.57 2 1.78 2 3.15 0 1.54-1.23 3.54-2.23 4.91-.69.94-1.27 1.59-1.27 1.59m-1.2-6.4c0 .6.5 1.2 1.2 1.2s1.3-.6 1.2-1.2c0-.6-.6-1.2-1.2-1.2s-1.2.5-1.2 1.2"/></svg>
+
+    </a>
+    xPollinator Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/xlandscape/xPollinator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xPollinator on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Get Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getstarted/getstarted.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenarios
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scenarios
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="scenario-intro.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#xp-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        xP Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="xP Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-development-aspects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario Development Aspects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario Development Aspects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-site-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario Site Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modular-scenario-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modular Scenario Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#levels-of-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Levels of Detail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Base Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#land-use-land-cover-lulc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Land Use Land Cover (LULC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topographic-national-base-maps-country-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topographic / National base maps (country-level)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agricultural-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agricultural Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-sensing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Sensing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beeforage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BeeForage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vegetation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vegetation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environmental-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environmental Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Example-scenarios-France.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Scenarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/glossary.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    xLandscape
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    xLandscape
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xLandscape/xLandscape-intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xLandscape/xLandscape-v1x.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Version 1.x
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xLandscape/xLandscape-components.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xLandscape/xLandscape-models.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Landscape Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xLandscape/xLandscape-outlook.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outlook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technology
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xLandscape/xLandscape-technology.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xLandscape/xLandscape-buildingComponents.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xLandscape/xLandscape-buildingModels.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Landscape Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xLandscape/xLandscape-references.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="intro-writing-in-progress">Intro <em>!writing in progress!</em></h1>
+<p>First of all, scenarios have a <strong>technical meaning</strong> as a structured integration of all nessessary environmental, land use/cover, agricultural, ecological data, information and assumptions to run a model (here, xPollinator). However, in environmental risk assessment, scenarios have a <strong>regulatory meaning</strong> as a testing system, that has to assure a certain protection level in case the test gets passed. In this role, scenarios have to address a certain <strong>level of conservatism</strong>, hence, need to be <strong>representative</strong> for a range of conditions of a typically large geographic area (e.g., a country).<br />
+Whereas detailed scenarios are applied to derive risk estimates, simple ones are used, e.g., for screening a level of conservatism for large areas.<br />
+Scenarios play a key role in the analysis and definition of effective <strong>risk mitigation</strong> measures. Scenarios can incorporate buffer zones, the use of drift-reducing technology, reduced application rates, or alternative practices to evaluate risk reduction. Beyond the focus on actual pesticide uses, scenarios serve <strong>risk management</strong> approaches targeting generic landscape characteristics which affect species populations, communities and biodiversity: e.g., the composition, managment and structure of cultivated landscapes, and their relationship to their surrounding regions.<br />
+Realistic landscape scenarios can play an important role in <strong>policy alignment</strong>: The definition of Specific Protection Goals (SPGs, e.g., <a href="https://doi.org/10.2903/j.efsa.2010.1821">EFSA 2010</a>, <a href="https://doi.org/10.2903/j.efsa.2025.9501">EFSA 2025</a>) is based on the ecosystem services concepts. Modern regulatory developments highlight the important role of landscape scenarios and approaches as a way to contextualize SPGs, e.g., for terrestrial organisms. Future risk and risk assessment will develop beyond single-species laboratory tests and incorporate realistic agricultural landscapes, including spatial and temporal heterogeneity, e.g., to capture both direct and indirect effects of pesticides. Risk management decisions should be informed by how pesticides affect organisms in actual European agroecosystems, not abstract worst-cases or averages. Landscape scenarios can ensure that SPGs align with broader environmental protection mandates to EU biodiversity and sustainability goals. So, landscape scenarios serve as a <strong>bridge between scientific modelling and regulatory decision-making</strong>.</p>
+<h2 id="xp-scenarios">xP Scenarios</h2>
+<h3 id="general">General</h3>
+<p>According to their technical meaning, scenario definition and requirements depend on the given composition of the xP landscape model (i.e., integrated components and their version). Thus, scenario development has to be adaptive and in line with xP model development.<br />
+<a href="/scenarios/Example-scenarios-France.md">Example scenarios</a> shipped with xP fit to the given model version and reside in the scenario folder after model download (xPollinator\scenario).<br />
+<a href="/scenarios/Example-scenarios-France.md">Example scenarios</a> also provide a good starting point for the development of user-defined (new) scenarios.  </p>
+<p>Outlook:<br />
+For scenario creation web-based services have been experimentally tested. Such services provide a (simple) GUI via web browser to enable the user to select a geographic location (e.g., via mouse click or by providing coordinates), to set parameters and to get a ready-to-use scenario back. This significally reduces effort and cost for the user and supports consistancy and harmonisation.<br />
+Furthermore, such services can support the study site identification, i.e., the selection of representative scenario locations (and numbers).  </p>
+<h3 id="scenario-development-aspects">Scenario Development Aspects</h3>
+<h4 id="scenario-site-selection">Scenario Site Selection</h4>
+<p>The selection of scenario sites is a crucial part of the scenario development process and depends on the study context, purpose and goals.<br />
+An example for a site selection process is illustrated below. The context is a regulatory risk assessment using the BeeHave model, for the use of an insecticide in apple cultivations in France. In this illustrative example, site selection was a 3-step approach:  </p>
+<ol>
+<li>At country scale (France), cultivation data consistantly available across France was used to select regions of high apple cropping density. Rationale: Honey bees forage on apple inflorescences. As a managed species, bee keepers like to put their hives in apple cultivation vicinity. Thus, risk of honey bees to get exposed by the use of a PPP in apples is driven by local apple cultivation density, simply: the more apple cultivations the greater the chance of bees to be exposed.<br />
+Bee activity is driven by weather conditions, eg, temperature, sunshine hours. As e.g., the effect of varying sunshine hours to risk is currently not clear, 3 regions of different climate conditions were selected covering climatic variability to increase scenario represenativeness.</li>
+<li>At regional level, bee forage mapping was built upon a dataset of Land Use/Cover types covering bee forage offering vegetation (eg, rape, apples, wood and road margins, riparian). The LULC layer was derived using off-the-shelf topographic, cropping, hydrographic datasets, cropping statistics and expert knowledge (eg, wood margin). A vulnerability map was derived combining densities of bee forage with potential exposure (pesticide use in apples).</li>
+<li>Local identification of realistic bee hive spots was done in cooperation with bee keepers: Beekeepers have the experience on where to place bee hives in a given landscape. Such management information adds reality to scenario development. This information was combined with regional vulnerability indices in order to ultimately select apiary sites (conservative, ie, high vulnerability percentile).  </li>
+</ol>
+<p>Outlook: xxx</p>
+<ul>
+<li>improve quantitative scenario ranking using a metamodel on beehive development (and exposure) derived from a large number of BEEHAVE simulation runs, screening the parameter space, in combination with a sensitivity analysis. </li>
+<li>explicitely include temporal (seasonal) bee forage variability and diversity
+improve quantitative local vulnerability (risk) indicies using a metamodel on beehive development (and exposure) (see also above)</li>
+</ul>
+<p>coverage of conditions, variability , </p>
+<p><img alt="Site Selection" src="../img/scenario%20selection%20-%20case%20study%20France.png" /></p>
+<p><img alt="Local Site Selection" src="../img/Scenario%20Example%20-%20local%20site%20selection.png" /></p>
+<h4 id="modular-scenario-development">Modular Scenario Development</h4>
+<p>xxx elements</p>
+<p><img alt="BeeForage in Landscape" src="../img/BeeForage%20occurrence%20in%20a%20landscape%20illustration.png" /></p>
+<p>xxx</p>
+<p><img alt="BeeForage Construction Kid" src="../img/Bee%20forage%20contruction%20kit%20illustration.png" /></p>
+<h4 id="levels-of-detail">Levels of Detail</h4>
+<p>The ideal data of local nectar and pollen provisioning by plant species and cummunities, together with the necessary data on environmental conditions is hardly available (and are not needed for a given purpose). Typically, <strong>bee forage occurrence is modeled</strong>, as a composit of data, models and expert judgement. Scale, precision and accurracy of this modelling approach should be adapted to the problem at hand. Transparancy in data preparation, processing and modelling steps is key to acceptability.<br />
+To support transparancy and structure in scenario development, we propose to consider explicit levels of detail, which relate to the purpose of the bee (pollinator) forage modelling:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Data Acquisition</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Off-the-shelf data</td>
+<td>Basic, wide-coverage datasets (satellite, national/regional products) suitable for large-scale or screening analyses.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Best-available data</td>
+<td>Curated and locally verified datasets with additional manual processing or expert review for improved accuracy.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Contemporary data generation</td>
+<td>High-resolution, high information depth data collected targeted for the study (e.g., drone mapping, targeted remote sensing).</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Field study</td>
+<td>Detailed, field mapping and measurements providing high-resolution information about forage, phenology and local environmental conditions.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="base-data">Base Data</h4>
+<p>This section introduces some base data, commonly used in scenario development. The information is more intended to give a general overview then to point on specific data as data devepoment and provisioning is very dynamic. We highly recommend to consult web pages, search engines and AI agents (artificial intelligence) for recent information before you start your development or study.  </p>
+<h5 id="land-use-land-cover-lulc">Land Use Land Cover (LULC)</h5>
+<p>A typical base geodata layer in scenario development is composed from pan‑European and national/topographic sources. The table below summarises common products and their typical availability across Europe and individual countries.</p>
+<table>
+<thead>
+<tr>
+<th>Dataset / Product</th>
+<th>Geographic coverage</th>
+<th>Typical spatial resolution / unit</th>
+<th>Access / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CORINE Land Cover (CLC) / Copernicus Land Monitoring</td>
+<td>Pan‑Europe (EEA)</td>
+<td>Vector polygons, minimum mapping unit ≈25 ha (derived raster products ~100 m)</td>
+<td>Open via EEA/Copernicus. Good for consistent, multi‑year land-cover mapping but coarse for parcel-scale studies.</td>
+</tr>
+<tr>
+<td>Copernicus High Resolution Layers (HRL)</td>
+<td>Pan‑Europe (selected layers)</td>
+<td>Thematic layers (e.g., forests, grasslands) often at 10–20 m equivalent detail</td>
+<td>Open via Copernicus; complements CLC with thematic detail.</td>
+</tr>
+<tr>
+<td>EU‑DEM / SRTM / national DEMs</td>
+<td>Pan‑Europe (EU‑DEM) / global (SRTM) / national high‑res</td>
+<td>DEMs at 25 m (EU‑DEM) to 90 m (SRTM); national LiDAR-derived DEMs much finer</td>
+<td>EU‑DEM open; national DEMs/LiDAR availability varies by country and region. Use national portals for high‑resolution DEMs.</td>
+</tr>
+<tr>
+<td>National orthophotos / aerial imagery</td>
+<td>Country / regional</td>
+<td>Very high resolution (sub‑meter to 1 m)</td>
+<td>Typically available from national mapping agencies; often open or low‑cost — invaluable for detailed mapping and manual validation.</td>
+</tr>
+<tr>
+<td>National crop cover / thematic crop maps (e.g., German Crop Cover Map)</td>
+<td>Country (examples: Germany, Netherlands, UK, France)</td>
+<td>Varies — from 10 m to parcel level</td>
+<td>Produced by national agencies or research groups; quality and update frequency vary by country. Check national portals for access and licensing.</td>
+</tr>
+<tr>
+<td>IACS / LPIS (administrative parcel data)</td>
+<td>National / regional (EU)</td>
+<td>Parcel-level declarations (farmers’ subsidy claims)</td>
+<td>Highly detailed for crop/use per parcel but often restricted; access requires agreements with national paying agencies. Excellent for parcel-scale scenario building when available.</td>
+</tr>
+<tr>
+<td>LIDAR / ALS point clouds &amp; derivatives</td>
+<td>Regional / national (select countries)</td>
+<td>Very high resolution (sub‑meter elevation, vegetation structure)</td>
+<td>Increasingly open in many countries (e.g., England, Netherlands, parts of Scandinavia); check national geoportals. Useful for hedges, canopy and microtopography.</td>
+</tr>
+<tr>
+<td>OpenStreetMap (OSM) &amp; volunteered data</td>
+<td>Global (incl. Europe)</td>
+<td>Vector features (roads, buildings, landuse polygons)</td>
+<td>Open and continuously updated; variable completeness and thematic consistency — useful for topographic features and small‑structure mapping.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="topographic-national-base-maps-country-level">Topographic / National base maps (country-level)</h5>
+<p>This table focuses on national topographic and base-map products (vector/raster), useful for deriving parcels, hedges, buildings and other baseline topographic features. Availability and licensing differ by country; check the national geoportal for access and licence terms.</p>
+<table>
+<thead>
+<tr>
+<th>Dataset / Product</th>
+<th>Country / Coverage</th>
+<th>Typical spatial resolution / unit</th>
+<th>Access / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ATKIS (Basis‑DLM)</td>
+<td>Germany</td>
+<td>Multi-scale vector topographic database; detailed topographic objects (scale-dependent)</td>
+<td>Provided by BKG and state mapping agencies; access via national geoportals. Licensing varies.</td>
+</tr>
+<tr>
+<td>BDTOPO / BD TOPO</td>
+<td>France</td>
+<td>National vector topographic database (detailed topographic layers)</td>
+<td>Provided by IGN; available via Géoportail and data.gouv.fr.</td>
+</tr>
+<tr>
+<td>BTN (Base Topográfica Nacional) / SIOSE</td>
+<td>Spain</td>
+<td>BTN: national topographic data; SIOSE: land‑use/land‑cover thematic map</td>
+<td>Available via CNIG; BTN for topography, SIOSE for land‑use. Licensing and access on national portals.</td>
+</tr>
+<tr>
+<td>OS OpenData / OS MasterMap</td>
+<td>Great Britain</td>
+<td>Vector topographic layers; MasterMap provides parcel/building-level detail (commercial)</td>
+<td>OS OpenData products available freely for many uses; MasterMap is commercial — check OS licensing.</td>
+</tr>
+<tr>
+<td>TOP10NL / TOP10Vector / AHN</td>
+<td>Netherlands</td>
+<td>TOP10: 1:10k vector topographic data; AHN: national LiDAR-derived elevations</td>
+<td>Distributed via PDOK; most datasets openly accessible.</td>
+</tr>
+<tr>
+<td>BEV / Basis‑DLM</td>
+<td>Austria</td>
+<td>National vector topographic database and derivatives</td>
+<td>Provided by BEV; access via Austrian geoportal.</td>
+</tr>
+<tr>
+<td>IGM / national topo products</td>
+<td>Italy</td>
+<td>National topographic maps and derived vector datasets</td>
+<td>Provided by IGM and regional geoportals; check national/regional portals for access.</td>
+</tr>
+<tr>
+<td>National examples (SE, NO, BE, PT, etc.)</td>
+<td>Sweden, Norway, Belgium, Portugal, ...</td>
+<td>Country-specific vector/raster topographic datasets (scale varies)</td>
+<td>Examples: Lantmäteriet (SE), Kartverket (NO), NGI/IGN (BE), IPMA/ICNF portals (PT). Check national geoportals for details.</td>
+</tr>
+<tr>
+<td>OpenStreetMap (OSM)</td>
+<td>Global (incl. Europe)</td>
+<td>Vector features (roads, buildings, boundary features)</td>
+<td>Open, community-maintained; variable completeness — useful as a fallback or for features missing in national datasets.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="agricultural-data">Agricultural Data</h5>
+<p>To support reproducibility and transparency, different statistical and administrative data sources are typically consulted when composing study-area inputs. The table below summarises common agricultural statistics sources across Europe (examples and access notes):</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Geographic coverage</th>
+<th>Key content</th>
+<th>Access / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eurostat (Farm Structure Survey, FSS; agri statistics)</td>
+<td>EU / Member States</td>
+<td>Farm structure, land used by crop, livestock numbers, farm size classes, basic agricultural indicators</td>
+<td>Eurostat data portal (tables by survey/year). Useful for consistent, comparable EU-wide indicators.</td>
+</tr>
+<tr>
+<td>FADN (Farm Accountancy Data Network)</td>
+<td>EU (sample of farms)</td>
+<td>Farm-level economic accounts, costs, incomes, farm types</td>
+<td>Access via EC DG AGRI / FADN portal; sample-based — good for economic analyses but not exhaustive.</td>
+</tr>
+<tr>
+<td>National agricultural censuses &amp; surveys (e.g., Germany: Agrarstrukturerhebung / DESTATIS)</td>
+<td>Country-level</td>
+<td>Detailed farm structure, crop areas, livestock, management practices (national methodology)</td>
+<td>Published by national statistical offices (e.g., DESTATIS for Germany). Use for highest national detail and legal definitions.</td>
+</tr>
+<tr>
+<td>IACS / LPIS (administrative subsidy data)</td>
+<td>National / Regional (EU)</td>
+<td>Parcel-level declarations, crop types, area per parcel — linked to subsidy claims</td>
+<td>Managed by national paying agencies; excellent for parcel-level mapping but access may be restricted or require agreements.</td>
+</tr>
+<tr>
+<td>National ministries / agencies &amp; sector bodies</td>
+<td>Country or regional</td>
+<td>Administrative statistics (production, registrations, herd/flock data), advisory reports</td>
+<td>Often published on ministry portals; complementary to census data and often more up-to-date.</td>
+</tr>
+<tr>
+<td>FAO / FAOSTAT</td>
+<td>Global (incl. Europe)</td>
+<td>Production, trade, input/output statistics, long time series</td>
+<td>Good for international comparability and long-term trends; lower spatial detail than national sources.</td>
+</tr>
+</tbody>
+</table>
+<p>A common base information layer, today typically available across countries Land use/cover data provides typically builds the spatial base information on 
+CORINE
+German Crop Cover Map
+EEA</p>
+<p>Vegetation mapping and modelling. <a href="https://euroveg.org/eva-database/">European Vegetation Archive (EVA)</a></p>
+<h5 id="remote-sensing">Remote Sensing</h5>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Purpose</th>
+<th>Availability</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Satellite, medium-resolution (Landsat 5/7/8/9; Sentinel-1/-2)</td>
+<td>Land use/cover mapping, agricultural management (crop types, harvest, ploughing), vegetation development</td>
+<td>Landsat archive (since &lt;1990, 30 m); Sentinel since ≈2016 (10 m)</td>
+<td>Free, full spatial coverage; mature processing workflows</td>
+</tr>
+<tr>
+<td>Satellite, high-resolution (&lt;1 m)</td>
+<td>LULC and small-structure mapping (hedges, margins), vegetation time series</td>
+<td>Operational since ≈2000; archives heterogeneous, tasking available</td>
+<td>Commercial providers; good for targeted studies</td>
+</tr>
+<tr>
+<td>Digital orthophotos (high-resolution, &lt;1 m)</td>
+<td>Parcel mapping, LULC, small structures</td>
+<td>Widely available since 1990s; national/regional coverage</td>
+<td>Low cost, widely used for mapping</td>
+</tr>
+<tr>
+<td>LIDAR (very high resolution)</td>
+<td>3D structure, hedge and margin geometry, elevation models</td>
+<td>Increasing availability since ≈2010</td>
+<td>Partly open data; provides detailed structural information</td>
+</tr>
+<tr>
+<td>Drones (very high resolution)</td>
+<td>Regional high-resolution mapping, vegetation characterisation, habitat mapping</td>
+<td>Regional / study-specific deployment; flexible temporal resolution</td>
+<td>Ideal for field studies; requires flight planning and permissions</td>
+</tr>
+<tr>
+<td>Field photography</td>
+<td>Local LULC, agricultural and habitat characterisation</td>
+<td>Field campaigns / regional</td>
+<td>Complementary to remote sensing; often collected by CROs or field teams</td>
+</tr>
+</tbody>
+</table>
+<h4 id="beeforage">BeeForage</h4>
+<p>The BeeForage component models the occurrence of nectar and pollen in space and time. The outcome is stored in a multidimensional data store.<br />
+The current version (v0.9) uses spatial data on vegetation types (units) and their phenology as base input, together with information on nectar and pollen production by these vegetation types. The core functionality of the BeeForage component is to match (model) nectar and pollen production for each of these vegetation types. In the current version, this is done by a simple lookup tables (with a honey bee focus):  </p>
+<ol>
+<li>Assigning nectar and pollen production intensity classes (0-4) to vegetation type (by time).  </li>
+<li>Assigning nectar and pollen production quantities to intensity classes.  </li>
+</ol>
+<p><img src="../img/Vegetation-Phenology illustration.png" alt="xPollinator modular design" width="700"/>  </p>
+<p>Lookup table to assign nectar and pollen production intensity classes (0-4) to vegetation type (by time).</p>
+<p><img src="../img/Nectar-Pollen quantification.png" alt="xPollinator modular design" width="1000"/>  </p>
+<p>Lookup table to assign nectar and pollen production quantities to intensity classes.</p>
+<p>Both lookup tables are based on literature and expert judgement (xxx).  </p>
+<p>This initial realisation of the BeeForage-Component can be enhanced and replaced by more sophisticated bee forage modelling, eg, using data-driven/AI or mechanistic models, together with corresponding geoinformation on the underlying vegetation.<br />
+The BeeForage-Component can also be extended to model the occurrence of honeydew, again, if corresponding models, knowledge and data are available (and fit to each other).  </p>
+<h4 id="vegetation">Vegetation</h4>
+<p>In our representation of vegetation (and its phenology), instead of employing an of-the-shelf land use/cover (LULC) dataset, we compose bee forage-providing land use/land cover elements from different sources. This composition is driven by the study purpose and related requirements (eg, level of detail, precision, certainty, scales), data availability, and given ressources. Eg, </p>
+<ul>
+<li>a LULC base layer (eg, topographic geodata) is used to identify general LULC types (eg, arable, forest, orchards, grasslands, gardens, ruderal) and more bee forage specific types if possible (eg, apple, decidious woods, arable crop types)  </li>
+<li>Specific bee forage providing crop types are identified from satellite imagery (eg, oil seed rape)  </li>
+<li>Likewise, grassland characterisation can be done using satellite imagery based approaches (eg, hayfield, natural, intense sillage)  </li>
+<li>Further bee forage relevant vegetation can be constructed from LULC base layers and literature (eg, riparian, wood margins)  </li>
+<li>High-resolution landscape elements can be added from mapping (eg, hedges, groups of bee forage relevant trees, etc.) </li>
+</ul>
+<p>The user defines PPP uses in a <strong><em>Crop Protection Calender</em></strong>, including application technology, and mitigation measures for reducing exposure (risk). The approach of using a <em>Crop Protection Calender</em> is based on agricultural practice, where pest control measures for a crop are typically planned based on experiance, PPP availability and other factors. Crop protection plans are made eg, by official plant protection advisory services, farmers, or PPP producers. Besides reflecting ag practice, the approach of a CPC also addresses modelling practice in risk assessment which typically focus on a certain indication, conducted over long time periods. Beyond these established uses, alternative CPCs can be used to assess the environmental impact of alternative pest control options, or to design new pest control means against established ones, considered as baselines.  </p>
+<h4 id="environmental-data">Environmental Data</h4>
+<p>Agri4Cast</p>
+<h2 id="references">References</h2>
+<p>xxx<br />
+Pritsch<br />
+Westrich "Die Wildbienen Deutschlands"</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "toc.integrate"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

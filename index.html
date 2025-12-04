@@ -1,0 +1,1420 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="getstarted/getstarted.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="img/land-plots-marker.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>xPollinator Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#welcome-to-xpollinator" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="xPollinator Documentation" class="md-header__button md-logo" aria-label="xPollinator Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 2h16c1.1 0 2 .9 2 2v6H10v10h4.55q.27.45.54.84c.29.43.57.82.83 1.16H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2m4 2H4v10h4zM4 16v4h4v-4zm6-8h10V4H10zm8.5 14s-.58-.65-1.27-1.59c-.09-.13-.19-.27-.29-.41C16 18.66 15 16.89 15 15.5c0-1.9 1.6-3.5 3.5-3.5.53 0 1.04.13 1.5.35 1.17.57 2 1.78 2 3.15 0 1.54-1.23 3.54-2.23 4.91-.69.94-1.27 1.59-1.27 1.59m-1.2-6.4c0 .6.5 1.2 1.2 1.2s1.3-.6 1.2-1.2c0-.6-.6-1.2-1.2-1.2s-1.2.5-1.2 1.2"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            xPollinator Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/xlandscape/xPollinator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xPollinator on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="getstarted/getstarted.html" class="md-tabs__link">
+          
+  
+  
+  Get Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="scenarios/scenario-intro.html" class="md-tabs__link">
+          
+  
+  
+  Scenarios
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="reference/troubleshooting.html" class="md-tabs__link">
+          
+  
+  
+  Technical Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="reference/glossary.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="xLandscape/xLandscape-intro.html" class="md-tabs__link">
+          
+  
+  
+  xLandscape
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="xPollinator Documentation" class="md-nav__button md-logo" aria-label="xPollinator Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 2h16c1.1 0 2 .9 2 2v6H10v10h4.55q.27.45.54.84c.29.43.57.82.83 1.16H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2m4 2H4v10h4zM4 16v4h4v-4zm6-8h10V4H10zm8.5 14s-.58-.65-1.27-1.59c-.09-.13-.19-.27-.29-.41C16 18.66 15 16.89 15 15.5c0-1.9 1.6-3.5 3.5-3.5.53 0 1.04.13 1.5.35 1.17.57 2 1.78 2 3.15 0 1.54-1.23 3.54-2.23 4.91-.69.94-1.27 1.59-1.27 1.59m-1.2-6.4c0 .6.5 1.2 1.2 1.2s1.3-.6 1.2-1.2c0-.6-.6-1.2-1.2-1.2s-1.2.5-1.2 1.2"/></svg>
+
+    </a>
+    xPollinator Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/xlandscape/xPollinator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xPollinator on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-and-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts and Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts and Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#framework-and-modularity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework and Modularity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bee-forage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bee Forage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beehave-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BEEHAVE Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Get Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getstarted/getstarted.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenarios
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scenarios
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="scenarios/scenario-intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="scenarios/Example-scenarios-France.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Scenarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/glossary.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    xLandscape
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    xLandscape
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xLandscape/xLandscape-intro.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xLandscape/xLandscape-v1x.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Version 1.x
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xLandscape/xLandscape-components.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xLandscape/xLandscape-models.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Landscape Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xLandscape/xLandscape-outlook.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outlook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technology
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xLandscape/xLandscape-technology.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xLandscape/xLandscape-buildingComponents.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xLandscape/xLandscape-buildingModels.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Landscape Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xLandscape/xLandscape-references.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="welcome-to-xpollinator">Welcome to xPollinator</h1>
+<p>Welcome to the xPollinator (xP) documentation. This documentation provides an <strong>introduction</strong> and will walk new users through <strong>how to get started</strong> with the xPollinator landscape model, including explanations for <strong>sample scenarios</strong> and their use with the <a href="https://beehave-model.net/">BEEHAVE model</a>.</p>
+<h2 id="background">Background</h2>
+<p>Today, <strong>scientific models</strong> make a great contribution to understanding and predicting the consequences of how we cultivate the landscapes we are living in. Based on present knowledge and together with data, models have become a key instrument in decision making.<br />
+An important field is the <strong>risk assessment and management of pesticides</strong>. In Europe (and countries beyond), this includes an assessment of pollinator risk, in particular, for the honey bee (<a href="https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2021.6607">EFSA Bee Guidance</a>). The risk assessment includes the use of models (eg,  <a href="https://beehave-model.net/">BEEHAVE model</a>, <a href="https://www.efsa.europa.eu/en/supporting/pub/en-9293">ApisRAM</a>) which require landscape scenarios for their operation. Key information of such scenarios is the occurrence of pollinator forage (mainly nectar and pollen).<br />
+Beyond the use of xP in a risk assessment and management context and given its modular and flexible design, xP can be employed in a range of <strong>related research and applied topics</strong>, eg,  </p>
+<ul>
+<li><strong>landscape design and management, biodiversity enhancements</strong></li>
+<li><strong>Holistic view to risk</strong>, multiple stressors analysis, systems-based approach, <a href="https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2021.6607">EFSA, Bee Guidance</a>)  </li>
+<li>Risk Assessment <strong>Recovery Option</strong> (<a href="https://www.efsa.europa.eu/en/efsajournal/pub/3290">EFSA, Aquatic Guidance</a>) </li>
+<li><strong>Environmental Impact Reduction</strong> (EIR), eg, <em>what if</em> analysis, assessment and documentation of real-world EIR by new plantprotection products and digital environmental safety solutions  </li>
+<li><strong>Insect decline analysis</strong>: habitat conditions    </li>
+<li><strong>Monitoring</strong> (design, insights, transfer of results to other regions and times)  </li>
+<li>Solutions for <strong>Integrated Pest Management</strong>: improved integration of the use of chemicals and agricultural practices to reduce environmental impact, comparison of pest control options (eg, weed control)  </li>
+<li><strong>Specific Protection Goals</strong>: identification of driving factors of populations dynamics for targeted chemical risk assessment endpoints and schemes  </li>
+<li><strong>Ecosystem Services</strong> (<a href="https://www.millenniumassessment.org/en/index.aspx">Millennium Ecosystem Assessment</a>): improvend quantitative insights into real-world <em>Ecosystem Services</em> for more explicit and transparent cost/benefit risk management. The work on the future of sustainable and regenerative agriculture <strong>requires improved operational instruments</strong> which allow to better understand real-world implications.  </li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>xPollinator is a landscape model to <strong>simulate bee forage occurrence</strong> in cultivated landscapes (currently nectar and pollen), <strong>pesticide use</strong>, as well as <strong>exposure</strong> of and <strong>effects</strong> on pollinators <strong>in space and time</strong> using real-world <strong>landscape data</strong>.<br />
+Its conceptual basis is <a href="#concepts"><strong>generic</strong></a> and open to be used for any pollinator species, whereas initial bee forage parameterisations and scenarios focus on the <strong>honey bee</strong>. xP is based on the <strong>modular landscape modelling framework</strong> <a href="xLandscape/xLandscape-intro.html#xlandscape">xLandscape</a>.</p>
+<p>Forage supply in the landscape largely determines honey bee activity and so the development of honey bee hives as well as of wild bee colonies. Correspondingly, the spatial and temporal occurrences of forage are essential information to model bee colony development (eg, using <a href="https://beehave-model.net/">BEEHAVE model</a> or <a href="https://www.efsa.europa.eu/en/supporting/pub/en-9293">ApisRAM</a>). Thus, dynamic forage representation builds the basis for modelling exposure and effects of honey bees due to contact to pesticides.<br />
+<strong>Bee forage</strong> is typically composed of nectar and pollen. In addition, honeydew provided by insects (typically living on trees and shrubs, i.e. in woodlands) can also provide an important forage ressource (initially not considered, yet such a module can added any time). In cultivated landscapes, nectar and pollen are provided by a variety of crops, natural and semi-natural vegetation, with a correspondingly spatial and temporal variability of intensities and quality attributes (eg, sugar type, content, protein content).<br />
+The entire process of modelling beeforage is of <a href="#modular-design">modular design</a>. This allows, e.g., to use a range of land use/cover data together with forage provision information as input, depending on the specific xP model purpose.  </p>
+<h2 id="concepts-and-design">Concepts and Design</h2>
+<h3 id="framework-and-modularity">Framework and Modularity</h3>
+<p><strong>xPollinator is a ready-to-use landscape model</strong> for spatiotemporally explicit modelling of pollinator risk in real-world landscapes. This requires to integrate a range of domains, information, processes and models.<br />
+In its initial version, xP can generate <a href="#scenarios">scenarios</a> for the <a href="https://beehave-model.net/">BEEHAVE model</a>, simulate spatiotemporally explicit exposure pattern of pesticides via different exposure routes and environmental fate, and can model effects of pesticide exposure to pollinators.<br />
+Its individual <strong>functionalities are represented in modules</strong> (called <a href="reference/glossary.html#components">components</a>) which are <strong>integrated into the <a href="xLandscape/xLandscape-intro.html#xlandscape">xLandscape</a> framework</strong> (figure below). Both, the framework and the modularity make xP <strong>flexible to adapt its present capabilities</strong> for a range of purposes of modelling pollinator forage (<a href="#background">Background</a>), pollinator exposure and effects, different species and for basically any geographic region and extent. Eg, in case a bee forage modeller has data and models to simulate the occurrence of honeydew producers, this can be integrated in the xP landscape model as a new component.  </p>
+<p><img src="img/xPollinator LandscapeModel scheme v01.png" alt="xPollinator model" width="1000"/>  </p>
+<p><strong>xPollinator landscape model</strong>. xP is a modular composition of components using the <a href="xLandscape/xLandscape-intro.html#xlandscape">xLandscape</a> framework. (Components marked with dashed lines were under discussion in the regulatory scientific community at the time of writing.)</p>
+<h3 id="bee-forage">Bee Forage</h3>
+<p>Nectar and pollen are predominately produced by <strong>flowering vegetation</strong>. Thus, vegetation type, plant species, their phenology and their specific nectar and pollen production (quantity, quality) is essential data and information. Bee forage is also provided as honeydew, which is produced by different insects (eg, Aphids probably the most well-known honeydew producers and often excrete large quantities, but also scale insects (Coccoidea), leafhoppers (Cicadellidae and others), Adelgids (Adelgidae), plant bugs (Heteroptera), whiteflies (Aleyrodidae), or mealybugs (Pseudococcidae)).<br />
+In line with the fundamental design of xLandscape, modelling pollinator forage is separated in  <strong>fundamental building blocks</strong> (modules), implemented as components and integrated into xP. Accordingly, modelling of bee forage in xP itsself is a modular approach, and individual moduls and be replaced (enhanced) giving improved knowledge. An illustration is shown in the figure below.  </p>
+<p><img src="img/BeeForage modelling process with Beehave scenario.png" alt="xPollinator modular design" width="1000"/>  </p>
+<p><strong>Bee forage modelling sequence</strong>. The explicit steps define xP components (initial focus on vegetation as forage providing landscape element).</p>
+<p>In the initital implementation of xP, key components for modelling bee forage are:</p>
+<ul>
+<li><strong>Land use/land cover</strong> (LULC) information: an assembly of spatial data that represents essential LULC types that provide bee forage. The geodata layer can be modulary composed of any data, information and knowledge that the modeller seems relevant and that can be acquired or generated at reasonable efforts (e.g., using satellite imagery), targeting the goals of the bee forage modelling study at hand.  </li>
+<li><strong>Vegetation and its phenology</strong>: a module to translate LULC types to vegetation types and their phenology. In its inital realisation, the assignments are realised in tabular format and are based on literature and expert knowledge. This early approach is regarded robust and sufficiently accurate for the initial applications of the xP landscape model. However, this simple realisation can be replaced and improved, e.g., by introducing AI on plant communities and phenology models.  </li>
+<li><strong>BeeForage(x,t)</strong>: the module to generate actual bee forage occurrence in space and time, i.e., (initially) the provision of nectar and pollen (space, time -&gt; BeeForage(x,t)).</li>
+<li>BeeHave Scenario Parser: a module for the ready-to-use preparation of bee forage scenario as input for a pollinator model (eg, the <a href="https://beehave-model.net/">BEEHAVE model</a>).</li>
+</ul>
+<p>A layered view might support the understanding of data and information layers used in bee forage modelling.  </p>
+<p><img src="img/BeeFOrage-Vegetation-Data layering.png" alt="xPollinator modular design" width="700"/>  </p>
+<p><strong>Data and information layers in bee forage modelling</strong>. (<em> </em>Sources* represent forage occurrence other then provided by vegetation, eg, honeydew producers.)  </p>
+<p>This modularity enables to basically use any type of data, information and sub-models which are approriate to a specific bee (pollinator) forage modelling purpose. Example data inputs and parameterisations are introduced in the <a href="#scenarios">Scenario</a> section.</p>
+<h3 id="beehave-model">BEEHAVE Model</h3>
+<p>In its initial version (October 2025) xPollinator integrates BEEHAVEcotox as the component to simulate effects to honey bees.<br />
+BEEHAVEecotox is an extension of the <a href="https://beehave-model.net/">BeeHave</a> model.<br />
+BEEHAVE is a purpose-built, open-source computer model that simulates the daily development of a honeybee colony together with explicit nectar and pollen foraging across heterogeneous landscapes. It integrates within-hive processes (brood care and colony population dynamics) with foraging behaviour and can represent multiple stressors — such as varroa, weather, forage shortages or pesticide impacts — to study their combined effects on colony health. BEEHAVE is implemented in NetLogo, comes with a user manual and detailed model description, and is available for download at the <a href="https://beehave-model.net/">BeeHave</a> project site.<br />
+<a href="https://github.com/ibacon-GmbH-Modelling/BEEHAVEecotox">BEEHAVEecotox</a> is an ecotoxicological extension of BEEHAVE that integrates a mechanistic effect module linking pesticide exposure to colony processes (mortality of foragers, brood, and in-hive bees) and landscape-scale inputs. Implemented in NetLogo, the package includes the NetLogo model code, a landscape extension, example input files (for food sources and pesticide applications), a user manual and technical notes. The BEEHAVEecotox implementation and its landscape extension are described in Preuss et al. (2022); the project sources and documentation are available from the BEEHAVEecotox GitHub repository under a GPL licence.</p>
+<h3 id="scenarios">Scenarios</h3>
+<p>Scenarios represent the environmental, land use, agricultural management and ecological conditions. Their definition heavily depends on the problem at hand, i.e., the modelling purpose. The technical requirements for xP scenarios, their concepts and development, as well as example scenarios are summarised in the <a href="scenarios/scenario-concepts.md">scenarios</a> section.  </p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>The development of the xP landscape model was initiated by Thorsten Schad (<a href="mailto:thorsten.schad@landwerk-ev.de">thorsten.schad@landwerk-ev.de</a>) and the major development was done by Sascha Bub (<a href="mailto:sascha.bub@rptu.de">sascha.bub@rptu.de</a>).<br />
+Its realisation was only possible due to the contribution of colleagues listed below and the sponsoring by Bayer AG.  </p>
+<table>
+<thead>
+<tr>
+<th>Role / Activity</th>
+<th>Person</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Idea and Initiative</td>
+<td>Thorsten Schad (<a href="mailto:thorsten.schad@landwerk-ev.de">thorsten.schad@landwerk-ev.de</a>)</td>
+</tr>
+<tr>
+<td>Goals&amp;Requiements</td>
+<td>Thorsten Schad, Vanessa Roeben (Bayer AG), Thomas Preuss (Bayer AG), Sascha Bub (<a href="mailto:sascha.bub@rptu.de">sascha.bub@rptu.de</a>)</td>
+</tr>
+<tr>
+<td>Design</td>
+<td>Thorsten Schad, Sascha Bub</td>
+</tr>
+<tr>
+<td>Implementation</td>
+<td>Sascha Bub, Thorsten Schad</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>Thorsten Schad</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>Thorsten Schad</td>
+</tr>
+<tr>
+<td>Publication</td>
+<td>Sascha Bub, Thorsten Schad, Julian Heinrich</td>
+</tr>
+<tr>
+<td>Analysis Modules</td>
+<td>Thorsten Schad, Julian Heinrich</td>
+</tr>
+<tr>
+<td>Scenarios</td>
+<td>Chris Holmes (Applied Analysis Solutions), Thorsten Schad, Sascha Bub</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<p><a href="https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2021.6607">EFSA Bee Guidance</a>.<br />
+Preuss, T.G., Agatz, A., Goussen, B., Roeben, V., Rumkee, J., Zakharova, L. &amp; Thorbek, P. (2022). The BEEHAVEecotox model - Integrating a mechanistic effect module into the honeybee colony model, Environmental Toxicology and Chemist, 41: 2870- 2882.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "toc.integrate"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
