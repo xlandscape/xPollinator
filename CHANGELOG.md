@@ -8,6 +8,16 @@ This list contains all additions, changes and fixes for xPollinator.
 
 ### Changed
 
+- scenario section
+
+### Fixed
+
+## [0.1.2] - 2025-12-03
+
+### Added
+
+### Changed
+
 - draft documentation
 
 ### Fixed
