@@ -1,0 +1,13 @@
+{
+  "scenario": "scenario/Tarn-et-Garonne-small",
+  "simulation_start": "2021-01-01",
+  "simulation_end": "2021-12-31",
+  "timesteps": 365,
+  "replicates": 5,
+  "treated_min_applications": 1,
+  "treated_max_applications": 5,
+  "hives": [
+    {"id": "hive01", "x": 127406.94, "y": 5482559.85, "random_seed": 42},
+    {"id": "hive02", "x": 130000.0,  "y": 5485000.0,  "random_seed": 43}
+  ]
+}

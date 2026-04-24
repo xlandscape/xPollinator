@@ -71,8 +71,8 @@
         <FromOutput component="Vegetation" output="Vegetation"/>
       </Vegetation>
       <AppliedVegetationId unit="1" scales="global" type="int">2102</AppliedVegetationId>
-      <MinNumberApplications unit="1" scales="global" type="int">0</MinNumberApplications>
-      <MaxNumberApplications unit="1" scales="global" type="int">0</MaxNumberApplications>
+      <MinNumberApplications unit="1" scales="global" type="int">$(MinNumberApplications)</MinNumberApplications>
+      <MaxNumberApplications unit="1" scales="global" type="int">$(MaxNumberApplications)</MaxNumberApplications>
       <FirstDayOfYearApplications unit="1" scales="global" type="int">100</FirstDayOfYearApplications>
       <LastDayOfYearApplications unit="1" scales="global" type="int">250</LastDayOfYearApplications>
       <ConcNectarMean unit="µg/kg" scales="global" type="float">1320</ConcNectarMean>
@@ -82,8 +82,9 @@
       <ContactToxicityMean unit="µg/bee" scales="global" type="float">0.4</ContactToxicityMean>
       <ContactToxicityStd unit="µg/bee" scales="global" type="float">0.04</ContactToxicityStd>
       <ExposurePeriod unit="d" scales="global" type="int">10000</ExposurePeriod>
-      <RandomSeed unit="1" scales="global" type="int">0</RandomSeed>
+      <RandomSeed unit="1" scales="global" type="int">$(BeeHaveRandomSeed)</RandomSeed>
       <JavaMemoryAllocation scales="global">2048m</JavaMemoryAllocation>
+      <NumberReplicates unit="1" scales="global" type="int">$(NumberBeeHaveReplicates)</NumberReplicates>
     </BeeHave>
   </Composition>
 </MCRun>

@@ -5,4 +5,10 @@
   <NumberBeeHaveTimesteps>365</NumberBeeHaveTimesteps>
   <BeeHaveMapCenterPointX>127406.9408</BeeHaveMapCenterPointX>
   <BeeHaveMapCenterPointY>5482559.8501</BeeHaveMapCenterPointY>
+  <NumberBeeHaveReplicates>1</NumberBeeHaveReplicates>
+  <BeeHaveRandomSeed>1</BeeHaveRandomSeed>
+  <MinNumberApplications>0</MinNumberApplications>
+  <MaxNumberApplications>0</MaxNumberApplications>
+  <RunLabel>TestRun</RunLabel>
+  <HiveGroupId>default</HiveGroupId>
 </Parameters>
