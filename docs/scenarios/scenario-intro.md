@@ -5,7 +5,7 @@ Whereas detailed scenarios are applied to derive risk estimates, simple ones are
 Scenarios play a key role in the analysis and definition of effective **risk mitigation** measures. Scenarios can incorporate buffer zones, the use of drift-reducing technology, reduced application rates, or alternative practices to evaluate risk reduction. Beyond the focus on actual pesticide uses, scenarios serve **risk management** approaches targeting generic landscape characteristics which affect species populations, communities and biodiversity: e.g., the composition, managment and structure of cultivated landscapes, and their relationship to their surrounding regions.  
 Realistic landscape scenarios can play an important role in **policy alignment**: The definition of Specific Protection Goals (SPGs, e.g., [EFSA 2010](https://doi.org/10.2903/j.efsa.2010.1821), [EFSA 2025](https://doi.org/10.2903/j.efsa.2025.9501)) is based on the ecosystem services concepts. Modern regulatory developments highlight the important role of landscape scenarios and approaches as a way to contextualize SPGs, e.g., for terrestrial organisms. Future risk and risk assessment will develop beyond single-species laboratory tests and incorporate realistic agricultural landscapes, including spatial and temporal heterogeneity, e.g., to capture both direct and indirect effects of pesticides. Risk management decisions should be informed by how pesticides affect organisms in actual European agroecosystems, not abstract worst-cases or averages. Landscape scenarios can ensure that SPGs align with broader environmental protection mandates to EU biodiversity and sustainability goals. So, landscape scenarios serve as a **bridge between scientific modelling and regulatory decision-making**.
 
-## xP Scenarios
+## Development
 
 ### General
 
@@ -17,33 +17,31 @@ Outlook:
 For scenario creation web-based services have been experimentally tested. Such services provide a (simple) GUI via web browser to enable the user to select a geographic location (e.g., via mouse click or by providing coordinates), to set parameters and to get a ready-to-use scenario back. This significally reduces effort and cost for the user and supports consistancy and harmonisation.  
 Furthermore, such services can support the study site identification, i.e., the selection of representative scenario locations (and numbers).  
 
-### Scenario Development Aspects
+### Elements
 
 #### Scenario Site Selection
 
-The selection of scenario sites is a crucial part of the scenario development process and depends on the study context, purpose and goals.  
+The selection of scenario sites is a crucial part of the scenario development process and depends on the study context, purpose and goals. Typically, the scenarios applied in an xPollinator modelling study are intended to be representative for a range of conditions (e.g., a larger geographic extent), hence, need to cover a range of real-world variability of environmental and agricultural conditions.  
 An example for a site selection process is illustrated below. The context is a regulatory risk assessment using the BeeHave model, for the use of an insecticide in apple cultivations in France. In this illustrative example, site selection was a 3-step approach:  
 
-1. At country scale (France), cultivation data consistantly available across France was used to select regions of high apple cropping density. Rationale: Honey bees forage on apple inflorescences. As a managed species, bee keepers like to put their hives in apple cultivation vicinity. Thus, risk of honey bees to get exposed by the use of a PPP in apples is driven by local apple cultivation density, simply: the more apple cultivations the greater the chance of bees to be exposed.  
+1. At **country scale** (France), cultivation data consistantly available across France was used to select regions of high apple cropping density. Rationale: Honey bees forage on apple inflorescences. As a managed species, bee keepers like to put their hives in apple cultivation vicinity. Thus, risk of honey bees to get exposed by the use of a PPP in apples is driven by local apple cultivation density, simply: the more apple cultivations the greater the chance of bees to be exposed.  
 Bee activity is driven by weather conditions, eg, temperature, sunshine hours. As e.g., the effect of varying sunshine hours to risk is currently not clear, 3 regions of different climate conditions were selected covering climatic variability to increase scenario represenativeness.
-1. At regional level, bee forage mapping was built upon a dataset of Land Use/Cover types covering bee forage offering vegetation (eg, rape, apples, wood and road margins, riparian). The LULC layer was derived using off-the-shelf topographic, cropping, hydrographic datasets, cropping statistics and expert knowledge (eg, wood margin). A vulnerability map was derived combining densities of bee forage with potential exposure (pesticide use in apples).
-1. Local identification of realistic bee hive spots was done in cooperation with bee keepers: Beekeepers have the experience on where to place bee hives in a given landscape. Such management information adds reality to scenario development. This information was combined with regional vulnerability indices in order to ultimately select apiary sites (conservative, ie, high vulnerability percentile).  
+1. At **regional scale**, bee forage mapping was built upon a dataset of Land Use/Cover types covering bee forage offering vegetation (eg, rape, apples, wood and road margins, riparian). The LULC layer was derived using off-the-shelf topographic, cropping, hydrographic datasets, cropping statistics and expert knowledge (eg, wood margin). A vulnerability map was derived combining densities of bee forage with potential exposure (pesticide use in apples).
+1. **Local** identification of realistic bee hive spots was done in cooperation with bee keepers: Beekeepers have the experience on where to place bee hives in a given landscape. Such management information adds reality to scenario development. This information was combined with regional vulnerability indices in order to ultimately select apiary sites (conservative, ie, high vulnerability percentile).  
 
-Outlook: xxx
-
-- improve quantitative scenario ranking using a metamodel on beehive development (and exposure) derived from a large number of BEEHAVE simulation runs, screening the parameter space, in combination with a sensitivity analysis. 
-- explicitely include temporal (seasonal) bee forage variability and diversity
-improve quantitative local vulnerability (risk) indicies using a metamodel on beehive development (and exposure) (see also above)
-
-
-
-coverage of conditions, variability , 
-
-![Site Selection](../img/scenario%20selection%20-%20case%20study%20France.png)
+![Site Selection Process](../img/scenario%20selection%20-%20case%20study%20France.png)
+Site selection process in example study.
 
 ![Local Site Selection](../img/Scenario%20Example%20-%20local%20site%20selection.png)
+Site selection process in example study, Step-2 and Step-3.
 
-#### Modular Scenario Development
+Outlook: xxx
+- explicitely include temporal (seasonal) bee forage variability and diversity
+- improve quantitative scenario ranking using a metamodel on beehive development (and exposure) derived from a large number of BEEHAVE simulation runs, screening the parameter space, in combination with a sensitivity analysis. 
+- improve quantitative local vulnerability (risk) indicies using a metamodel on beehive development (and exposure) (see also above)
+
+
+#### Modularity in Scenario Development
 
 xxx elements
 
