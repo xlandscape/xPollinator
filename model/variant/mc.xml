@@ -70,20 +70,26 @@
       <Vegetation>
         <FromOutput component="Vegetation" output="Vegetation"/>
       </Vegetation>
-      <AppliedVegetationId unit="1" scales="global" type="int">2102</AppliedVegetationId>
-      <MinNumberApplications unit="1" scales="global" type="int">0</MinNumberApplications>
-      <MaxNumberApplications unit="1" scales="global" type="int">0</MaxNumberApplications>
-      <FirstDayOfYearApplications unit="1" scales="global" type="int">100</FirstDayOfYearApplications>
-      <LastDayOfYearApplications unit="1" scales="global" type="int">250</LastDayOfYearApplications>
-      <ConcNectarMean unit="µg/kg" scales="global" type="float">1320</ConcNectarMean>
-      <ConcNectarStd unit="µg/kg" scales="global" type="float">132</ConcNectarStd>
-      <ConcPollenMean unit="µg/kg" scales="global" type="float">36200</ConcPollenMean>
-      <ConcPollenStd unit="µg/kg" scales="global" type="float">3620</ConcPollenStd>
-      <ContactToxicityMean unit="µg/bee" scales="global" type="float">0.4</ContactToxicityMean>
-      <ContactToxicityStd unit="µg/bee" scales="global" type="float">0.04</ContactToxicityStd>
+      <AppliedVegetationId unit="1" scales="global" type="int">$(AppliedVegetationId)</AppliedVegetationId>
+      <MinNumberApplications unit="1" scales="global" type="int">$(MinNumberApplications)</MinNumberApplications>
+      <MaxNumberApplications unit="1" scales="global" type="int">$(MaxNumberApplications)</MaxNumberApplications>
+      <FirstDayOfYearApplications unit="1" scales="global" type="int">$(FirstDayOfYearApplications)</FirstDayOfYearApplications>
+      <LastDayOfYearApplications unit="1" scales="global" type="int">$(LastDayOfYearApplications)</LastDayOfYearApplications>
+      <ConcNectarMean unit="µg/kg" scales="global" type="float">$(ConcNectarMean)</ConcNectarMean>
+      <ConcNectarStd unit="µg/kg" scales="global" type="float">$(ConcNectarStd)</ConcNectarStd>
+      <ConcPollenMean unit="µg/kg" scales="global" type="float">$(ConcPollenMean)</ConcPollenMean>
+      <ConcPollenStd unit="µg/kg" scales="global" type="float">$(ConcPollenStd)</ConcPollenStd>
+      <ContactToxicityMean unit="µg/bee" scales="global" type="float">$(ContactToxicityMean)</ContactToxicityMean>
+      <ContactToxicityStd unit="µg/bee" scales="global" type="float">$(ContactToxicityStd)</ContactToxicityStd>
       <ExposurePeriod unit="d" scales="global" type="int">10000</ExposurePeriod>
       <RandomSeed unit="1" scales="global" type="int">0</RandomSeed>
       <JavaMemoryAllocation scales="global">2048m</JavaMemoryAllocation>
+      <SunshineHours scales="global" type="list[float]">$(SunshineHours)</SunshineHours>
+      <SeasonHoPoMoRepX1>$(SeasonHoPoMoRepX1)</SeasonHoPoMoRepX1>
+      <SeasonHoPoMoRepX2>$(SeasonHoPoMoRepX2)</SeasonHoPoMoRepX2>
+      <SeasonHoPoMoRepX3>$(SeasonHoPoMoRepX3)</SeasonHoPoMoRepX3>
+      <SeasonHoPoMoRepX4>$(SeasonHoPoMoRepX4)</SeasonHoPoMoRepX4>
+      <SeasonHoPoMoRepX5>$(SeasonHoPoMoRepX5)</SeasonHoPoMoRepX5>
     </BeeHave>
   </Composition>
 </MCRun>
