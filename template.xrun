@@ -2,11 +2,14 @@
 <Parameters>
   <SimID>TestRun</SimID>
   <Project>scenario/Tarn-et-Garonne-small</Project>
+  <SimulationStart>2021-01-01</SimulationStart>
+  <SimulationEnd>2026-12-31</SimulationEnd>
   <NumberBeeHaveTimesteps>365</NumberBeeHaveTimesteps>
   <BeeHaveMapCenterPointX>127406.9408</BeeHaveMapCenterPointX>
   <BeeHaveMapCenterPointY>5482559.8501</BeeHaveMapCenterPointY>
   <NumberBeeHaveReplicates>1</NumberBeeHaveReplicates>
   <BeeHaveRandomSeed>1</BeeHaveRandomSeed>
+  <BeeHaveWeather>Rothamsted (2009)</BeeHaveWeather>
   <MinNumberApplications>0</MinNumberApplications>
   <MaxNumberApplications>0</MaxNumberApplications>
   <RunLabel>TestRun</RunLabel>

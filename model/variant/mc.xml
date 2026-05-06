@@ -19,7 +19,7 @@
   </Store>
   <Global>
     <SimulationStart>2021-01-01</SimulationStart>
-    <SimulationEnd>2021-12-31</SimulationEnd>
+    <SimulationEnd>2026-12-31</SimulationEnd>
   </Global>
   <Composition>
     <LandscapeScenario module="components" class="LandscapeScenario">
@@ -83,6 +83,8 @@
       <ContactToxicityStd unit="µg/bee" scales="global" type="float">0.04</ContactToxicityStd>
       <ExposurePeriod unit="d" scales="global" type="int">10000</ExposurePeriod>
       <RandomSeed unit="1" scales="global" type="int">$(BeeHaveRandomSeed)</RandomSeed>
+      <BeeHaveWeather scales="global">$(BeeHaveWeather)</BeeHaveWeather>
+      <BeeHaveWeatherFile scales="global">$(BeeHaveWeatherFile)</BeeHaveWeatherFile>
       <JavaMemoryAllocation scales="global">2048m</JavaMemoryAllocation>
       <NumberReplicates unit="1" scales="global" type="int">$(NumberBeeHaveReplicates)</NumberReplicates>
     </BeeHave>

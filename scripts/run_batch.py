@@ -7,9 +7,10 @@ Manifest (JSON):
     {
       "scenario": "scenario/Tarn-et-Garonne-small",
       "simulation_start": "2021-01-01",
-      "simulation_end":   "2021-12-31",
-      "timesteps": 365,
+            "simulation_end":   "2026-12-31",
+            "timesteps": 2190,
       "replicates": 10,
+            "weather": "Berlin (2000-2006)",
       "treated_min_applications": 1,
       "treated_max_applications": 5,
       "hives": [
@@ -47,19 +48,30 @@ def build_xrun(manifest: dict, hive: dict, treated: bool, output_dir: str) -> st
         min_apps = 0
         max_apps = 0
     root = ET.Element("Parameters")
+    project_path = manifest["scenario"]
+    if not os.path.isabs(project_path):
+        project_path = os.path.join(REPO_ROOT, project_path)
     fields = {
         "SimID": sim_id,
-        "Project": manifest["scenario"],
+        "Project": project_path,
+        "SimulationStart": manifest["simulation_start"],
+        "SimulationEnd": manifest["simulation_end"],
         "NumberBeeHaveTimesteps": str(manifest["timesteps"]),
         "BeeHaveMapCenterPointX": str(hive["x"]),
         "BeeHaveMapCenterPointY": str(hive["y"]),
         "NumberBeeHaveReplicates": str(manifest["replicates"]),
         "BeeHaveRandomSeed": str(hive["random_seed"]),
+        "BeeHaveWeather": manifest.get("weather", "Rothamsted (2009)"),
         "MinNumberApplications": str(min_apps),
         "MaxNumberApplications": str(max_apps),
         "RunLabel": sim_id,
         "HiveGroupId": hive["id"],
     }
+    weather_file = manifest.get("weather_file")
+    if weather_file:
+        if not os.path.isabs(weather_file):
+            weather_file = os.path.join(REPO_ROOT, weather_file)
+        fields["BeeHaveWeatherFile"] = weather_file
     for tag, text in fields.items():
         el = ET.SubElement(root, tag)
         el.text = text
