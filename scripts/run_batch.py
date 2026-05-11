@@ -11,6 +11,7 @@ Manifest (JSON):
             "timesteps": 2190,
       "replicates": 10,
             "weather": "Berlin (2000-2006)",
+      "number_mc_runs": 1,
       "treated_min_applications": 1,
       "treated_max_applications": 5,
       "hives": [
@@ -21,6 +22,7 @@ Manifest (JSON):
 
 For each hive, two .xrun files are generated (untreated/treated) sharing the same
 RandomSeed so treatment sampling is reproducible. SimID = <hive_id>_<untreated|treated>.
+Each .xrun file specifies the NumberMC outer Monte Carlo count (default 1 for backward compatibility).
 
 The generated .xrun files are written to batch_runs/ next to the manifest and executed
 sequentially via the bundled Python + init.py.
@@ -64,6 +66,7 @@ def build_xrun(manifest: dict, hive: dict, treated: bool, output_dir: str) -> st
         "BeeHaveWeather": manifest.get("weather", "Rothamsted (2009)"),
         "MinNumberApplications": str(min_apps),
         "MaxNumberApplications": str(max_apps),
+        "NumberMC": str(manifest.get("number_mc_runs", 1)),
         "RunLabel": sim_id,
         "HiveGroupId": hive["id"],
     }

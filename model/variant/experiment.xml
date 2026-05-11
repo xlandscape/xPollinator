@@ -3,7 +3,7 @@
   <General>
     <ExperimentDir>$(_EXP_BASE_DIR_)\$(SimID)</ExperimentDir>
     <MCBaseDir>$(_EXP_BASE_DIR_)\$(SimID)\mcs</MCBaseDir>
-    <NumberMC>1</NumberMC>
+    <NumberMC>$(NumberMC)</NumberMC>
     <NumberParallelProcesses>1</NumberParallelProcesses>
     <EnableProfiling>false</EnableProfiling>
     <ProfilingWaitingTime>5</ProfilingWaitingTime>
