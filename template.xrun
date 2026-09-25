@@ -14,4 +14,24 @@
   <MaxNumberApplications>0</MaxNumberApplications>
   <RunLabel>TestRun</RunLabel>
   <HiveGroupId>default</HiveGroupId>
+  <NumberMC>1</NumberMC>
+  <GAP>default</GAP>
+  <AppliedVegetationId>2102</AppliedVegetationId>
+  <FirstDayOfYearApplications>100</FirstDayOfYearApplications>
+  <LastDayOfYearApplications>250</LastDayOfYearApplications>
+  <ExposurePeriod>10000</ExposurePeriod>
+  <ContactToxicityMean>0.4</ContactToxicityMean>
+  <ContactToxicityStd>0.04</ContactToxicityStd>
+  <ConcNectarMean>1320</ConcNectarMean>
+  <ConcNectarStd>132</ConcNectarStd>
+  <ConcPollenMean>36200</ConcPollenMean>
+  <ConcPollenStd>3620</ConcPollenStd>
+  <ResidueUnitDose>21</ResidueUnitDose>
+  <PlantDT50>1000</PlantDT50>
+  <ForagerOralLD50>0.127</ForagerOralLD50>
+  <ForagerOralSlope>4.37</ForagerOralSlope>
+  <ForagerContactLD50>0.169</ForagerContactLD50>
+  <ForagerContactSlope>16.6</ForagerContactSlope>
+  <LarvaeOralLD50>0.24</LarvaeOralLD50>
+  <LarvaeOralSlope>1.186</LarvaeOralSlope>
 </Parameters>

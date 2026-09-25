@@ -14,6 +14,7 @@ Manifest (JSON):
       "number_mc_runs": 1,
       "treated_min_applications": 1,
       "treated_max_applications": 5,
+      "gap": "thiacloprid_apple_EU_120",
       "hives": [
         {"id": "hive01", "x": 127406.94, "y": 5482559.85, "random_seed": 42},
         {"id": "hive02", "x": 130000.0,  "y": 5485000.0,  "random_seed": 43}
@@ -23,6 +24,8 @@ Manifest (JSON):
 For each hive, two .xrun files are generated (untreated/treated) sharing the same
 RandomSeed so treatment sampling is reproducible. SimID = <hive_id>_<untreated|treated>.
 Each .xrun file specifies the NumberMC outer Monte Carlo count (default 1 for backward compatibility).
+The optional "gap" key selects a preset from model/variant/gaps.json (default "default"); its exposure
+and toxicity parameters are written into every .xrun file, treated and untreated alike.
 
 The generated .xrun files are written to batch_runs/ next to the manifest and executed
 sequentially via the bundled Python + init.py.
@@ -33,6 +36,9 @@ import os
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from apply_gap import gap_params  # noqa: E402
 
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -70,6 +76,7 @@ def build_xrun(manifest: dict, hive: dict, treated: bool, output_dir: str) -> st
         "RunLabel": sim_id,
         "HiveGroupId": hive["id"],
     }
+    fields.update(gap_params(manifest.get("gap", "default")))
     weather_file = manifest.get("weather_file")
     if weather_file:
         if not os.path.isabs(weather_file):

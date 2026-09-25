@@ -19,7 +19,7 @@
   </Store>
   <Global>
     <SimulationStart>2021-01-01</SimulationStart>
-    <SimulationEnd>2026-12-31</SimulationEnd>
+    <SimulationEnd>2021-12-31</SimulationEnd>
   </Global>
   <Composition>
     <LandscapeScenario module="components" class="LandscapeScenario">
@@ -70,18 +70,30 @@
       <Vegetation>
         <FromOutput component="Vegetation" output="Vegetation"/>
       </Vegetation>
-      <AppliedVegetationId unit="1" scales="global" type="int">2102</AppliedVegetationId>
+      <!-- Pesticide exposure and toxicity. Values come from a GAP preset in model/variant/gaps.json and are passed
+           through the .xrun file (see template.xrun). -->
+      <AppliedVegetationId unit="1" scales="global" type="int">$(AppliedVegetationId)</AppliedVegetationId>
       <MinNumberApplications unit="1" scales="global" type="int">$(MinNumberApplications)</MinNumberApplications>
       <MaxNumberApplications unit="1" scales="global" type="int">$(MaxNumberApplications)</MaxNumberApplications>
-      <FirstDayOfYearApplications unit="1" scales="global" type="int">100</FirstDayOfYearApplications>
-      <LastDayOfYearApplications unit="1" scales="global" type="int">250</LastDayOfYearApplications>
-      <ConcNectarMean unit="µg/kg" scales="global" type="float">1320</ConcNectarMean>
-      <ConcNectarStd unit="µg/kg" scales="global" type="float">132</ConcNectarStd>
-      <ConcPollenMean unit="µg/kg" scales="global" type="float">36200</ConcPollenMean>
-      <ConcPollenStd unit="µg/kg" scales="global" type="float">3620</ConcPollenStd>
-      <ContactToxicityMean unit="µg/bee" scales="global" type="float">0.4</ContactToxicityMean>
-      <ContactToxicityStd unit="µg/bee" scales="global" type="float">0.04</ContactToxicityStd>
-      <ExposurePeriod unit="d" scales="global" type="int">10000</ExposurePeriod>
+      <FirstDayOfYearApplications unit="1" scales="global" type="int">$(FirstDayOfYearApplications)</FirstDayOfYearApplications>
+      <LastDayOfYearApplications unit="1" scales="global" type="int">$(LastDayOfYearApplications)</LastDayOfYearApplications>
+      <ConcNectarMean unit="µg/kg" scales="global" type="float">$(ConcNectarMean)</ConcNectarMean>
+      <ConcNectarStd unit="µg/kg" scales="global" type="float">$(ConcNectarStd)</ConcNectarStd>
+      <ConcPollenMean unit="µg/kg" scales="global" type="float">$(ConcPollenMean)</ConcPollenMean>
+      <ConcPollenStd unit="µg/kg" scales="global" type="float">$(ConcPollenStd)</ConcPollenStd>
+      <!-- Application rate of the treated crop in kg a.i./ha. BEEHAVEecotox derives the contact dose per bee as
+           rate [kg/ha] * RUD [(ha*mg)/(kg*kg)] * 0.1 g bee weight. -->
+      <ContactToxicityMean unit="kg/ha" scales="global" type="float">$(ContactToxicityMean)</ContactToxicityMean>
+      <ContactToxicityStd unit="kg/ha" scales="global" type="float">$(ContactToxicityStd)</ContactToxicityStd>
+      <ExposurePeriod unit="d" scales="global" type="int">$(ExposurePeriod)</ExposurePeriod>
+      <ResidueUnitDose unit="(ha*mg)/(kg*kg)" scales="global" type="float">$(ResidueUnitDose)</ResidueUnitDose>
+      <PlantDT50 unit="d" scales="global" type="float">$(PlantDT50)</PlantDT50>
+      <ForagerOralLD50 unit="µg/bee" scales="global" type="float">$(ForagerOralLD50)</ForagerOralLD50>
+      <ForagerOralSlope unit="1" scales="global" type="float">$(ForagerOralSlope)</ForagerOralSlope>
+      <ForagerContactLD50 unit="µg/bee" scales="global" type="float">$(ForagerContactLD50)</ForagerContactLD50>
+      <ForagerContactSlope unit="1" scales="global" type="float">$(ForagerContactSlope)</ForagerContactSlope>
+      <LarvaeOralLD50 unit="µg/larva" scales="global" type="float">$(LarvaeOralLD50)</LarvaeOralLD50>
+      <LarvaeOralSlope unit="1" scales="global" type="float">$(LarvaeOralSlope)</LarvaeOralSlope>
       <RandomSeed unit="1" scales="global" type="int">$(BeeHaveRandomSeed)</RandomSeed>
       <BeeHaveWeather scales="global">$(BeeHaveWeather)</BeeHaveWeather>
       <BeeHaveWeatherFile scales="global">$(BeeHaveWeatherFile)</BeeHaveWeatherFile>
