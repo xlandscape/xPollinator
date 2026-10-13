@@ -24,6 +24,8 @@ Manifest (JSON):
 For each hive, two .xrun files are generated (untreated/treated) sharing the same
 RandomSeed so treatment sampling is reproducible. SimID = <hive_id>_<untreated|treated>.
 Each .xrun file specifies the NumberMC outer Monte Carlo count (default 1 for backward compatibility).
+Optional manifest keys "sunshine_hours" (365 values) and "season_hopomo" (X1..X5) override the
+weather/season defaults taken from template.xrun.
 The optional "gap" key selects a preset from model/variant/gaps.json (default "default"); its exposure
 and toxicity parameters are written into every .xrun file, treated and untreated alike.
 
@@ -39,11 +41,35 @@ import xml.etree.ElementTree as ET
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from apply_gap import gap_params  # noqa: E402
+from update_xrun_weather import WEATHER_KEYS, template_weather_params  # noqa: E402
 
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 BUNDLED_PYTHON = os.path.join(REPO_ROOT, "model", "core", "bin", "python-3.9.7-amd64", "python.exe")
 INIT_PY = os.path.join(REPO_ROOT, "model", "core", "init.py")
+
+
+def weather_params(manifest: dict) -> dict:
+    """SunshineHours and SeasonHoPoMoRepX1..5 for the .xrun file.
+
+    Defaults come from template.xrun (Rothamsted 2009 series, HoPoMo season). A manifest
+    may override them with "sunshine_hours" (365 numbers, list or space-separated string)
+    and "season_hopomo" (five numbers X1..X5).
+    """
+    params = template_weather_params()
+    sunshine = manifest.get("sunshine_hours")
+    if sunshine is not None:
+        values = sunshine.split() if isinstance(sunshine, str) else [str(v) for v in sunshine]
+        if len(values) != 365:
+            raise ValueError(f"sunshine_hours must contain 365 values, got {len(values)}")
+        params["SunshineHours"] = " ".join(values)
+    season = manifest.get("season_hopomo")
+    if season is not None:
+        if len(season) != 5:
+            raise ValueError("season_hopomo must contain five values (X1..X5)")
+        for i, value in enumerate(season, start=1):
+            params[f"SeasonHoPoMoRepX{i}"] = str(value)
+    return {key: params[key] for key in WEATHER_KEYS}
 
 
 def build_xrun(manifest: dict, hive: dict, treated: bool, output_dir: str) -> str:
@@ -77,6 +103,7 @@ def build_xrun(manifest: dict, hive: dict, treated: bool, output_dir: str) -> st
         "HiveGroupId": hive["id"],
     }
     fields.update(gap_params(manifest.get("gap", "default")))
+    fields.update(weather_params(manifest))
     weather_file = manifest.get("weather_file")
     if weather_file:
         if not os.path.isabs(weather_file):
