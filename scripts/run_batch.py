@@ -41,7 +41,7 @@ import xml.etree.ElementTree as ET
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from apply_gap import gap_params  # noqa: E402
-from update_xrun_weather import WEATHER_KEYS, template_weather_params  # noqa: E402
+from update_xrun_weather import WEATHER_KEYS, scenario_sunshine_hours, template_weather_params  # noqa: E402
 
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -52,11 +52,15 @@ INIT_PY = os.path.join(REPO_ROOT, "model", "core", "init.py")
 def weather_params(manifest: dict) -> dict:
     """SunshineHours and SeasonHoPoMoRepX1..5 for the .xrun file.
 
-    Defaults come from template.xrun (Rothamsted 2009 series, HoPoMo season). A manifest
-    may override them with "sunshine_hours" (365 numbers, list or space-separated string)
-    and "season_hopomo" (five numbers X1..X5).
+    SunshineHours defaults to the scenario's weather/sunshine_hours.txt when present,
+    otherwise to template.xrun (Rothamsted 2009); the season defaults come from
+    template.xrun. A manifest may override them with "sunshine_hours" (365 numbers,
+    list or space-separated string) and "season_hopomo" (five numbers X1..X5).
     """
     params = template_weather_params()
+    scenario_series = scenario_sunshine_hours(manifest.get("scenario", ""))
+    if scenario_series:
+        params["SunshineHours"] = scenario_series
     sunshine = manifest.get("sunshine_hours")
     if sunshine is not None:
         values = sunshine.split() if isinstance(sunshine, str) else [str(v) for v in sunshine]
