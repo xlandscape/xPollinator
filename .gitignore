@@ -1,2 +1,5 @@
 run/
 .idea/
+
+# Homologa extracts (scripts/query_homologa_uses.py), regenerable, may be large
+scripts/homologa/
