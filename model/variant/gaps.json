@@ -24,11 +24,11 @@
   "gaps": [
     {
       "id": "default",
-      "label": "Default (legacy xPollinator parameterisation)",
-      "substance": "unspecified",
+      "label": "Dimethoate (legacy xPollinator parameterisation)",
+      "substance": "dimethoate",
       "crop": "Fruit and berry plantations (vegetation class 2102)",
       "source": "Values hard-coded in model/variant/mc.xml and BeeHaveEcotox/template/experiment.xml before GAP presets existed.",
-      "notes": "Kept so that older runs can be reproduced. DT50 of 1000 d and exposure period of 10000 d mean residues never dissipate.",
+      "notes": "Kept so that older runs can be reproduced. DT50 of 1000 d and exposure period of 10000 d mean residues never dissipate. The toxicity endpoints (oral LD50 0.127, contact LD50 0.169 ug/bee, larval LD50 0.24 ug/larva) are the BEEHAVEecotox dimethoate reference values; the exposure side (0.4 kg/ha, residue concentrations, application window day 100-250) is the historical placeholder, not a registered dimethoate GAP.",
       "params": {
         "AppliedVegetationId": 2102,
         "FirstDayOfYearApplications": 100,
