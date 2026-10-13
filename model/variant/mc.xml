@@ -98,6 +98,14 @@
       <BeeHaveWeather scales="global">$(BeeHaveWeather)</BeeHaveWeather>
       <BeeHaveWeatherFile scales="global">$(BeeHaveWeatherFile)</BeeHaveWeatherFile>
       <JavaMemoryAllocation scales="global">2048m</JavaMemoryAllocation>
+      <!-- Weather and brood season (SETAC 2026): daily sunshine hours injected into the
+           'Rothamsted (2009)' slot of the NetLogo model, and the HoPoMo egg-laying season shape. -->
+      <SunshineHours scales="global" type="list[float]">$(SunshineHours)</SunshineHours>
+      <SeasonHoPoMoRepX1>$(SeasonHoPoMoRepX1)</SeasonHoPoMoRepX1>
+      <SeasonHoPoMoRepX2>$(SeasonHoPoMoRepX2)</SeasonHoPoMoRepX2>
+      <SeasonHoPoMoRepX3>$(SeasonHoPoMoRepX3)</SeasonHoPoMoRepX3>
+      <SeasonHoPoMoRepX4>$(SeasonHoPoMoRepX4)</SeasonHoPoMoRepX4>
+      <SeasonHoPoMoRepX5>$(SeasonHoPoMoRepX5)</SeasonHoPoMoRepX5>
       <NumberReplicates unit="1" scales="global" type="int">$(NumberBeeHaveReplicates)</NumberReplicates>
     </BeeHave>
   </Composition>
