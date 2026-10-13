@@ -7,8 +7,11 @@ This list contains all additions, changes and fixes for xPollinator.
 ### Added
 
 - GAP presets in `model/variant/gaps.json`: each preset bundles the exposure parameters of a crop use with the toxicity
-  endpoints of the substance. Includes the legacy `default` parameterisation and thiacloprid on apple for EU and US
-  application rates.
+  endpoints of the substance. Includes the legacy `default` parameterisation (dimethoate endpoints), thiacloprid on
+  apple for EU and US application rates, and dimethoate on apple from the Ukrainian registrations in Homologa
+  (`dimethoate_apple_UA_800`).
+- `scripts/query_homologa_uses.py` pulls registered uses of active substances from Homologa (BigQuery) as input for
+  new presets.
 - `scripts/apply_gap.py` writes a preset into existing `.xrun` files; `scripts/run_batch.py` accepts a `gap` manifest
   key.
 - BeeHaveEcotox inputs `ResidueUnitDose`, `PlantDT50`, `ForagerOralLD50`, `ForagerOralSlope`, `ForagerContactLD50`,

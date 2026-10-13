@@ -189,6 +189,34 @@
         "LarvaeOralLD50": 0.8,
         "LarvaeOralSlope": 1.1
       }
+    },
+    {
+      "id": "dimethoate_apple_UA_800",
+      "label": "Dimethoate, apple, Ukraine 800 g a.i./ha",
+      "substance": "dimethoate",
+      "crop": "Apple orchards (vegetation class 2102)",
+      "source": "Homologa (BigQuery bcs-dfs-eng.homologa), extract 2026-10-13: Ukrainian registrations of 400 g/L EC products (B-58 new, Bimmer, Dimevit, Dimi 58, Superbison, Fostran, Accent and others) on apple, 2 L/ha, up to 2 applications per season, PHI 40 d, stage 'vegetative period' or 'pre/post-flowering', targets codling moth, tortricids, scales, mites, aphids.",
+      "notes": "Dimethoate has no EU registration since 2019 (EU rows in Homologa all expired, none on apple); Ukraine is the closest current apple GAP. Application window day 79-212 covers the vegetative period from bud break to PHI before harvest and includes flowering, which is the exposure-relevant worst case; narrow it to 79-92 for a pre-bloom-only variant. Residue concentrations use the EFSA default residue-per-unit-dose values (3300 ug/kg nectar, 90500 ug/kg pollen per kg a.i./ha) scaled to 0.8 kg a.i./ha; exposure period 21 d, RUD 21 and plant DT50 10 d (EFSA bee guidance default, no substance-specific value confirmed) follow the thiacloprid presets. Toxicity endpoints are the BEEHAVEecotox dimethoate reference values already used by the legacy default preset. Standard deviations set to 10 % of the mean.",
+      "params": {
+        "AppliedVegetationId": 2102,
+        "FirstDayOfYearApplications": 79,
+        "LastDayOfYearApplications": 212,
+        "ExposurePeriod": 21,
+        "ContactToxicityMean": 0.8,
+        "ContactToxicityStd": 0.08,
+        "ConcNectarMean": 2640,
+        "ConcNectarStd": 264,
+        "ConcPollenMean": 72400,
+        "ConcPollenStd": 7240,
+        "ResidueUnitDose": 21,
+        "PlantDT50": 10,
+        "ForagerOralLD50": 0.127,
+        "ForagerOralSlope": 4.37,
+        "ForagerContactLD50": 0.169,
+        "ForagerContactSlope": 16.6,
+        "LarvaeOralLD50": 0.24,
+        "LarvaeOralSlope": 1.186
+      }
     }
   ]
 }
