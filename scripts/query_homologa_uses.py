@@ -109,33 +109,56 @@ LEFT JOIN {dose_unit} AS dose_unit ON dose_unit.dose_unit_code = u.dose_unit_cod
 """
 
 
-def summarize(frame, crop_filter: str) -> None:
+def summarize(frame, crop_filter: str, out_base: str | None = None) -> None:
+    """Print a per-substance overview and write distinct GAP rows for the crop filter.
+
+    Homologa keeps withdrawn registrations; every row gets a status (valid / expired /
+    no expiry date) from use_exp_date so historical and current GAPs can be told apart.
+    """
     import pandas as pd
 
-    pd.set_option("display.width", 200, "display.max_columns", 30, "display.max_colwidth", 40)
-    today = dt.date.today().isoformat()
-    exp = frame["use_exp_date"].astype("string")
-    frame = frame.assign(valid=(exp.isna()) | (exp >= today))
+    pd.set_option("display.width", 220, "display.max_columns", 30, "display.max_colwidth", 32)
+    today = dt.date.today()
+    frame = frame.copy()
+    exp = pd.to_datetime(frame["use_exp_date"].astype("string"), format="%d/%m/%Y", errors="coerce")
+    frame["status"] = pd.Series("no expiry date", index=frame.index).where(
+        exp.isna(), (exp.dt.date >= today).map({True: "valid", False: "expired"}))
+    frame["last_expiry"] = exp
+    frame["rate_kg_ai_ha"] = pd.to_numeric(frame["max_rate_kg_ai_ha"], errors="coerce")
+    frame["apps"] = pd.to_numeric(frame["max_treat_app"], errors="coerce")
     for substance, part in frame.groupby("acti_name"):
         print(f"\n===== {substance}: {len(part)} use rows, {part['use_id'].nunique()} use ids, "
-              f"{part['ctry_abrev'].nunique()} countries, {part['prod_code'].nunique()} products, "
-              f"{int(part['valid'].sum())} rows not expired")
-        print("-- countries (rows, valid rows):")
-        print(part.groupby("ctry_abrev")["valid"].agg(["size", "sum"]).sort_values("size", ascending=False).head(25).T.to_string())
+              f"{part['ctry_abrev'].nunique()} countries, {part['prod_code'].nunique()} products; "
+              f"status: {part['status'].value_counts().to_dict()}")
+        ct = pd.crosstab(part["ctry_abrev"], part["status"]).reindex(
+            columns=["valid", "no expiry date", "expired"], fill_value=0)
+        print("-- countries (top 20 by rows):")
+        print(ct.assign(total=ct.sum(axis=1)).sort_values("total", ascending=False).head(20).T.to_string())
         print("-- top crops:")
-        print(part["crop_name"].value_counts().head(15).to_string())
-        if crop_filter:
-            sel = part[part["crop_name"].astype("string").str.contains(crop_filter, case=False, na=False)
-                       | part["crpg_name_eu"].astype("string").str.contains(crop_filter, case=False, na=False)]
-            print(f"-- '{crop_filter}' uses: {len(sel)} rows, {int(sel['valid'].sum())} not expired")
-            cols = ["ctry_abrev", "prod_orig_name_en", "crop_name", "max_dose_r", "dose_unit_name", "max_rate_kg_ai_ha",
-                    "max_treat_app", "inter_treat_min", "time_app_name", "crop_stag_name", "bbch_from_code", "bbch_to_code",
-                    "phi", "use_exp_date"]
-            print(sel.sort_values(["valid", "ctry_abrev"], ascending=[False, True])[cols].head(40).to_string(index=False))
-            if sel["max_rate_kg_ai_ha"].notna().any():
-                print("-- max rate kg a.i./ha (orchard uses):", sel["max_rate_kg_ai_ha"].describe().round(3).to_dict())
-            if sel["max_treat_app"].notna().any():
-                print("-- applications per season:", sel["max_treat_app"].astype(float).value_counts().sort_index().to_dict())
+        print(part["crop_name"].value_counts().head(12).to_string())
+        if not crop_filter:
+            continue
+        sel = part[part["crop_name"].astype("string").str.contains(crop_filter, case=False, na=False)
+                   | part["crpg_name_eu"].astype("string").str.contains(crop_filter, case=False, na=False)]
+        print(f"-- '{crop_filter}' uses: {len(sel)} rows; status: {sel['status'].value_counts().to_dict()}")
+        if sel.empty:
+            continue
+        print("-- rate kg a.i./ha (where derivable):", sel["rate_kg_ai_ha"].describe().round(3).to_dict())
+        print("-- applications per season:", sel["apps"].value_counts().sort_index().to_dict())
+        print("-- timing:", sel["time_app_name"].value_counts(dropna=False).head(6).to_dict())
+        print("-- stage:", sel["crop_stag_name"].value_counts(dropna=False).head(6).to_dict())
+        keys = ["ctry_abrev", "prod_orig_name_en", "crop_name", "max_dose_r", "dose_unit_name", "rate_kg_ai_ha",
+                "apps", "inter_treat_min", "time_app_name", "crop_stag_name", "bbch_from_code", "bbch_to_code", "phi"]
+        gap = (sel.groupby(keys, dropna=False)
+               .agg(n=("use_id", "size"), last_expiry=("last_expiry", "max"),
+                    status=("status", lambda s: "valid" if (s == "valid").any() else s.iloc[0]))
+               .reset_index().sort_values(["status", "ctry_abrev", "last_expiry"], ascending=[False, True, False]))
+        print(f"-- distinct GAP rows for the crop filter: {len(gap)} (newest two per country, first 30):")
+        print(gap.groupby("ctry_abrev").head(2).head(30).to_string(index=False))
+        if out_base:
+            path = f"{out_base}_gaps_{substance.lower()}.csv"
+            gap.to_csv(path, index=False)
+            print(f"   written: {path}")
 
 
 def main() -> int:
@@ -153,7 +176,7 @@ def main() -> int:
 
     import pandas as pd
     if args.summary_only:
-        summarize(pd.read_parquet(args.summary_only), args.crop_filter)
+        summarize(pd.read_parquet(args.summary_only), args.crop_filter, os.path.splitext(args.summary_only)[0])
         return 0
 
     from google.cloud import bigquery
@@ -186,7 +209,7 @@ def main() -> int:
     frame.to_parquet(base + ".parquet", index=False)
     frame.to_csv(base + ".csv", index=False)
     print(f"written: {base}.parquet / .csv")
-    summarize(frame, args.crop_filter)
+    summarize(frame, args.crop_filter, base)
     return 0
 
 
