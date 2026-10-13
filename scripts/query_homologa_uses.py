@@ -11,7 +11,7 @@ EFM-DLT-pAIR virtualenv):
 Reads `bcs-dfs-eng.homologa` at `use` grain (one row per registered use, product and crop),
 joining de-duplicated English lookups as in EFM-DLT-pAIR/dlt_pair/sources/homologa_bigquery.py.
 Billing project `bcs-reg-core-datasets`; the scan is capped with --max-gb (views report 0 bytes
-on dry runs, real scans of the use view cost roughly 0.5 to 1 USD). Results are written to
+on dry runs; a real scan of the use view needs more than 160 GB, about 1 to 2 USD). Results are written to
 scripts/homologa/<stamp>_<substances>.csv and .parquet, and a summary (countries, products,
 crops, dose and timing of orchard uses) is printed. An identical query within 24 h is served
 from the BigQuery result cache free of charge.
@@ -36,7 +36,10 @@ def english_lookup(table: str, code_col: str, name_col: str, lang_col: str = "la
     )
 
 
-def build_query() -> str:
+def build_query(filter_countries: bool = False) -> str:
+    """SQL at use grain. The country filter is only emitted when countries are given: an empty
+    ARRAY parameter arrives as NULL in BigQuery, which would make the WHERE clause drop every row."""
+    country_filter = "WHERE UPPER(country.ctry_abrev) IN UNNEST(@countries)" if filter_countries else ""
     crop_stage = english_lookup("crop_stage", "crop_stag_code", "crop_stag_name")
     time_app = english_lookup("time_application", "time_app_code", "time_app_name")
     method = english_lookup("application_method", "meth_code", "meth_name")
@@ -102,7 +105,7 @@ LEFT JOIN {time_app} AS time_app ON time_app.time_app_code = u.time_app_code
 LEFT JOIN {method} AS method ON method.meth_code = u.meth_code
 LEFT JOIN {pest} AS pest ON pest.pest_code = u.pest_code
 LEFT JOIN {dose_unit} AS dose_unit ON dose_unit.dose_unit_code = u.dose_unit_code
-WHERE (ARRAY_LENGTH(@countries) = 0 OR UPPER(country.ctry_abrev) IN UNNEST(@countries))
+{country_filter}
 """
 
 
@@ -140,7 +143,7 @@ def main() -> int:
     parser.add_argument("--substance", action="append", help="active substance name as in Homologa (repeatable)")
     parser.add_argument("--countries", nargs="*", default=[], help="ISO country abbreviations to keep (default all)")
     parser.add_argument("--crop-filter", default="apple|pome|orchard", help="regex on crop / EU crop group for the detail summary")
-    parser.add_argument("--max-gb", type=float, default=120, help="maximum bytes billed in GB (default 120)")
+    parser.add_argument("--max-gb", type=float, default=300, help="maximum bytes billed in GB (default 300; the use view scans about 200 GB)")
     parser.add_argument("--project", default=BILLING_PROJECT)
     parser.add_argument("--dry-run", action="store_true", help="validate the query only (views report 0 bytes)")
     parser.add_argument("--summary-only", metavar="PARQUET", help="re-print the summary from a saved parquet file")
@@ -155,7 +158,7 @@ def main() -> int:
 
     from google.cloud import bigquery
 
-    sql = build_query()
+    sql = build_query(filter_countries=bool(countries))
     client = bigquery.Client(project=args.project)
     job_config = bigquery.QueryJobConfig(
         query_parameters=[
