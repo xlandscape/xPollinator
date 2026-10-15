@@ -107,6 +107,7 @@
       <SeasonHoPoMoRepX4 unit="1" scales="global" type="int">$(SeasonHoPoMoRepX4)</SeasonHoPoMoRepX4>
       <SeasonHoPoMoRepX5 unit="1" scales="global" type="int">$(SeasonHoPoMoRepX5)</SeasonHoPoMoRepX5>
       <NumberReplicates unit="1" scales="global" type="int">$(NumberBeeHaveReplicates)</NumberReplicates>
+      <MonteCarloIndex unit="1" scales="global" type="int">$(_MC_ID_)</MonteCarloIndex>
     </BeeHave>
   </Composition>
 </MCRun>

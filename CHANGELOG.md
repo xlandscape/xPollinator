@@ -6,6 +6,9 @@ This list contains all additions, changes and fixes for xPollinator.
 
 ### Added
 
+- BeeHaveEcotox input `MonteCarloIndex` (fed from `$(_MC_ID_)`): each outer Monte Carlo run gets its own block of
+  BEEHAVE random seeds and application draws, so replicates no longer repeat across MC runs. Replaces the local
+  framework patch that offset `BeeHaveRandomSeed` per MC run.
 - GAP presets in `model/variant/gaps.json`: each preset bundles the exposure parameters of a crop use with the toxicity
   endpoints of the substance. Includes the legacy `default` parameterisation (dimethoate endpoints), thiacloprid on
   apple for EU and US application rates, and dimethoate on apple from the Ukrainian registrations in Homologa
