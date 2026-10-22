@@ -71,7 +71,9 @@ Example ***.xrun*** file:
 ``` xml
 <Parameters>
   <SimID>TestRun</SimID>
+  <ExperimentID>TestRun</ExperimentID>
   <Project>scenario/Tarn-et-Garonne-small</Project>
+  <LandscapeScenario>scenario/Tarn-et-Garonne-small</LandscapeScenario>
   <NumberBeeHaveTimesteps>365</NumberBeeHaveTimesteps>
   <BeeHaveMapCenterPointX>127406.9408</BeeHaveMapCenterPointX>
   <BeeHaveMapCenterPointY>5482559.8501</BeeHaveMapCenterPointY>

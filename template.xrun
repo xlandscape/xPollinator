@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Parameters>
+  <!-- SimID names the run folder (run/<SimID>, see model/variant/experiment.xml). Core 1.19 additionally
+       requires ExperimentID (it appends a start-up timestamp to it) and LandscapeScenario (formerly Project);
+       keep them equal to SimID and Project. -->
   <SimID>TestRun</SimID>
+  <ExperimentID>TestRun</ExperimentID>
   <Project>scenario/Tarn-et-Garonne-small</Project>
+  <LandscapeScenario>scenario/Tarn-et-Garonne-small</LandscapeScenario>
   <SimulationStart>2021-01-01</SimulationStart>
   <SimulationEnd>2026-12-31</SimulationEnd>
   <NumberBeeHaveTimesteps>365</NumberBeeHaveTimesteps>

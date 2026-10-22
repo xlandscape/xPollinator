@@ -129,7 +129,9 @@ def build_xrun(manifest: dict, hive: dict, treatment: dict, output_dir: str) -> 
         project_path = os.path.join(REPO_ROOT, project_path)
     fields = {
         "SimID": sim_id,
+        "ExperimentID": sim_id,  # required by core >= 1.19 (renamed SimID); folders still use SimID
         "Project": project_path,
+        "LandscapeScenario": project_path,  # required by core >= 1.19 (renamed Project)
         "SimulationStart": manifest["simulation_start"],
         "SimulationEnd": manifest["simulation_end"],
         "NumberBeeHaveTimesteps": str(manifest["timesteps"]),

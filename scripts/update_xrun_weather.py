@@ -12,6 +12,11 @@ SunshineHours comes from the scenario when it provides one: the file
 <Project>/weather/sunshine_hours.txt (365 numbers, '#' comments allowed).
 Otherwise, and for the season parameters, the values of template.xrun are used.
 With --replace an existing <SunshineHours> is overwritten by the scenario series.
+
+Core 1.19 renamed the parameters SimID to ExperimentID and Project to LandscapeScenario
+and requires both. Missing <ExperimentID>/<LandscapeScenario> elements are inserted as
+copies of <SimID>/<Project>; SimID and Project stay because model/variant names the run
+folder after SimID and the BeeView tools read Project.
 """
 from __future__ import annotations
 
@@ -78,10 +83,29 @@ def _project_of(text: str) -> str | None:
     return m.group(1) if m else None
 
 
+CORE_ALIASES = {"SimID": "ExperimentID", "Project": "LandscapeScenario"}
+
+
+def add_core_aliases(text: str) -> tuple[str, list[str]]:
+    """Insert <ExperimentID>/<LandscapeScenario> after <SimID>/<Project> where missing (core >= 1.19)."""
+    added = []
+    for old, new in CORE_ALIASES.items():
+        if re.search(rf"<{new}>", text):
+            continue
+        m = re.search(rf"^([ \t]*)<{old}>(.*?)</{old}>[ \t]*(\r?\n)", text, flags=re.M | re.S)
+        if m is None:
+            continue
+        indent, value, newline = m.group(1), m.group(2), m.group(3)
+        text = text[: m.end()] + f"{indent}<{new}>{value}</{new}>{newline}" + text[m.end():]
+        added.append(new)
+    return text, added
+
+
 def update_xrun(path: str, params: dict[str, str], replace: bool = False) -> list[str]:
-    """Insert missing weather elements into one .xrun file; return the added/replaced tags."""
+    """Insert missing weather and core-alias elements into one .xrun file; return the added/replaced tags."""
     with open(path, "r", encoding="utf-8") as fh:
         text = fh.read()
+    text, aliases = add_core_aliases(text)
     params = dict(params)
     scenario_series = scenario_sunshine_hours(_project_of(text) or "")
     if scenario_series:
@@ -92,7 +116,10 @@ def update_xrun(path: str, params: dict[str, str], replace: bool = False) -> lis
         replaced.append("SunshineHours")
     missing = [key for key in WEATHER_KEYS if not re.search(rf"<{key}>", text)]
     if not missing and not replaced:
-        return []
+        if aliases:
+            with open(path, "w", encoding="utf-8", newline="") as fh:
+                fh.write(text)
+        return aliases
     anchor = re.search(r"^([ \t]*)<BeeHaveWeatherFile>.*?</BeeHaveWeatherFile>[ \t]*\r?\n", text, flags=re.M | re.S)
     if anchor is None:
         anchor = re.search(r"^([ \t]*)<BeeHaveWeather>.*?</BeeHaveWeather>[ \t]*\r?\n", text, flags=re.M | re.S)
@@ -117,7 +144,7 @@ def update_xrun(path: str, params: dict[str, str], replace: bool = False) -> lis
         text = text.replace("\x00", value, 1)
     with open(path, "w", encoding="utf-8", newline="") as fh:
         fh.write(text)
-    return replaced + missing
+    return aliases + replaced + missing
 
 
 def main() -> int:

@@ -23,12 +23,21 @@ This list contains all additions, changes and fixes for xPollinator.
 
 ### Changed
 
+- xLandscape core updated from 1.18.1 to 1.19.1. Core 1.19 renamed the parameters `SimID` to `ExperimentID` and
+  `Project` to `LandscapeScenario` and requires both. `template.xrun`, `scripts/run_batch.py` and BeeView-server now
+  write both names; run folders are still named after `SimID`. `scripts/update_xrun_weather.py` adds the new elements
+  to existing `.xrun` files.
 - All pesticide exposure and toxicity inputs of the BeeHave component in `model/variant/mc.xml` are now `.xrun`
   parameters. `.xrun` files therefore need the parameter block found in `template.xrun` (or run
   `scripts/apply_gap.py <gap_id> <file.xrun>`).
 
 ### Fixed
 
+- Pollen-only vegetation classes (maize, sorghum, hazelnut) provided no pollen: core `components.BeeForage` wrote
+  nectar and pollen only for classes with nectar, so these fields kept NaN and BeeHaveEcotox dropped them as forage
+  sources. Fixed in core 1.19.1. BeeHaveEcotox additionally wrote only stations with both nectar and pollen to
+  `Sources.txt`; pollen-only stations are now included. Simulations made before this change lack maize, sorghum and
+  hazelnut pollen.
 - Unit of the BeeHaveEcotox inputs `ContactToxicityMean` and `ContactToxicityStd` corrected from µg/bee to kg/ha. The
   value is the application rate written to `ETOX_PPPContact_patch`; BEEHAVEecotox derives the contact dose per bee from
   it as rate × RUD × 0.1 g (RUD fixed at 21).
