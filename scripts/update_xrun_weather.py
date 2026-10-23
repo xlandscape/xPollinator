@@ -17,6 +17,9 @@ Core 1.19 renamed the parameters SimID to ExperimentID and Project to LandscapeS
 and requires both. Missing <ExperimentID>/<LandscapeScenario> elements are inserted as
 copies of <SimID>/<Project>; SimID and Project stay because model/variant names the run
 folder after SimID and the BeeView tools read Project.
+
+model/variant/experiment.xml reads $(NumberMC) (outer Monte Carlo runs) since May 2026;
+files without it get <NumberMC>1</NumberMC>.
 """
 from __future__ import annotations
 
@@ -84,6 +87,7 @@ def _project_of(text: str) -> str | None:
 
 
 CORE_ALIASES = {"SimID": "ExperimentID", "Project": "LandscapeScenario"}
+REQUIRED_DEFAULTS = {"NumberMC": "1"}
 
 
 def add_core_aliases(text: str) -> tuple[str, list[str]]:
@@ -98,6 +102,16 @@ def add_core_aliases(text: str) -> tuple[str, list[str]]:
         indent, value, newline = m.group(1), m.group(2), m.group(3)
         text = text[: m.end()] + f"{indent}<{new}>{value}</{new}>{newline}" + text[m.end():]
         added.append(new)
+    for key, default in REQUIRED_DEFAULTS.items():
+        if re.search(rf"<{key}>", text):
+            continue
+        m = re.search(r"^([ \t]*)<SimID>.*?</SimID>[ \t]*(\r?\n)", text, flags=re.M | re.S)
+        close = re.search(r"</Parameters>", text)
+        if m is None or close is None:
+            continue
+        line = f"{m.group(1)}<{key}>{default}</{key}>{m.group(2)}"
+        text = text[: close.start()] + line + text[close.start():]
+        added.append(key)
     return text, added
 
 

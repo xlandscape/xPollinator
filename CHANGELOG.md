@@ -6,6 +6,8 @@ This list contains all additions, changes and fixes for xPollinator.
 
 ### Added
 
+- `scripts/check_xrun.py` lists the parameters a `.xrun` file lacks for the current `mc.xml`, `experiment.xml`
+  and core. `scripts/update_xrun_weather.py` also adds `<NumberMC>1</NumberMC>` where it is missing.
 - BeeHaveEcotox input `MonteCarloIndex` (fed from `$(_MC_ID_)`): each outer Monte Carlo run gets its own block of
   BEEHAVE random seeds and application draws, so replicates no longer repeat across MC runs. Replaces the local
   framework patch that offset `BeeHaveRandomSeed` per MC run.
