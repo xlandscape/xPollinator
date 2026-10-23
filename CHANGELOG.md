@@ -37,7 +37,7 @@ This list contains all additions, changes and fixes for xPollinator.
 
 - Pollen-only vegetation classes (maize, sorghum, hazelnut) provided no pollen: core `components.BeeForage` wrote
   nectar and pollen only for classes with nectar, so these fields kept NaN and BeeHaveEcotox dropped them as forage
-  sources. Fixed in core 1.19.1. BeeHaveEcotox additionally wrote only stations with both nectar and pollen to
+  sources. Fixed in core 1.19.1 (core master, PR #8). BeeHaveEcotox additionally wrote only stations with both nectar and pollen to
   `Sources.txt`; pollen-only stations are now included. Simulations made before this change lack maize, sorghum and
   hazelnut pollen.
 - Unit of the BeeHaveEcotox inputs `ContactToxicityMean` and `ContactToxicityStd` corrected from µg/bee to kg/ha. The
