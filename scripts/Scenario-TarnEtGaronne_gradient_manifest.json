@@ -1,0 +1,51 @@
+{
+  "scenario": "scenario/Scenario-TarnEtGaronne",
+  "simulation_start": "2021-01-01",
+  "simulation_end": "2021-12-31",
+  "timesteps": 365,
+  "replicates": 10,
+  "weather": "Weather File",
+  "weather_file": "scripts/weather/Tarn-et-Garonne_2023.txt",
+  "number_mc_runs": 10,
+  "gap": "default",
+  "treatments": [
+    {
+      "id": "Dimethoate",
+      "gap": "dimethoate_apple_UA_800",
+      "min_applications": 2,
+      "max_applications": 2
+    },
+    {
+      "id": "thiacloprid",
+      "gap": "thiacloprid_apple_EU_120",
+      "min_applications": 1,
+      "max_applications": 1
+    }
+  ],
+  "hives": [
+    {
+      "id": "hive_9001",
+      "x": 129475.026,
+      "y": 5476313.439,
+      "group_id": 9001,
+      "random_seed": 9001,
+      "comment": "orchard share 15.9 % within 5 km, coverage 0.955, edge of winter wheat parcel, 3.6 km from existing hives"
+    },
+    {
+      "id": "hive_9004",
+      "x": 124702.977,
+      "y": 5488401.764,
+      "group_id": 9004,
+      "random_seed": 9004,
+      "comment": "orchard share 8.5 % within 5 km, coverage 0.964 (lowest share with full coverage), edge of mixed-arable parcel, forest-rich"
+    },
+    {
+      "id": "hive_9003",
+      "x": 130263.575,
+      "y": 5474441.442,
+      "group_id": 9003,
+      "random_seed": 9003,
+      "comment": "orchard share 9.2 % within 5 km, coverage 0.80 (20 % of circle outside landscape), edge of corn parcel 21 m from an orchard"
+    }
+  ]
+}

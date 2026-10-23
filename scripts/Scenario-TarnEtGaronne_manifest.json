@@ -1,0 +1,62 @@
+{
+  "scenario": "scenario/Scenario-TarnEtGaronne",
+  "simulation_start": "2021-01-01",
+  "simulation_end": "2021-12-31",
+  "timesteps": 365,
+  "replicates": 10,
+  "weather": "Weather File",
+  "weather_file": "scripts/weather/Tarn-et-Garonne_2023.txt",
+  "number_mc_runs": 10,
+  "gap": "default",
+  "treatments": [
+    {
+      "id": "Dimethoate",
+      "gap": "dimethoate_apple_UA_800",
+      "min_applications": 2,
+      "max_applications": 2
+    },
+    {
+      "id": "thiacloprid",
+      "gap": "thiacloprid_apple_EU_120",
+      "min_applications": 1,
+      "max_applications": 1
+    }
+  ],
+  "hives": [
+    {
+      "id": "hive_3614",
+      "x": 133028.450365634,
+      "y": 5480138.78623194,
+      "group_id": 3614,
+      "random_seed": 3614
+    },
+    {
+      "id": "hive_2114",
+      "x": 128794.453143013,
+      "y": 5481686.00851263,
+      "group_id": 2114,
+      "random_seed": 2114
+    },
+    {
+      "id": "hive_1360",
+      "x": 127339.427291461,
+      "y": 5480986.23766658,
+      "group_id": 1360,
+      "random_seed": 1360
+    },
+    {
+      "id": "hive_3779",
+      "x": 133350.724988512,
+      "y": 5481389.96628913,
+      "group_id": 3779,
+      "random_seed": 3779
+    },
+    {
+      "id": "hive_2617",
+      "x": 130393.203777429,
+      "y": 5481770.69339805,
+      "group_id": 2617,
+      "random_seed": 2617
+    }
+  ]
+}
